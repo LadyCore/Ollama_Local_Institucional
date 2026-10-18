@@ -240,6 +240,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** recarga de systemd, inicio manual y consulta de estado; después inspección de controles efectivos.
 - **Recuperación:** corrección del archivo y nueva validación; sin cambios en servicios ajenos.
 
+## 2026-10-18 — B026 — Primer arranque de Ollama verificado
+
+- **Estado:** ejecutado; servicio activo según salida aportada.
+- **Acción y comandos:** `systemctl daemon-reload`, `systemctl start ollama`, `systemctl status ollama --no-pager`.
+- **Evidencia:** `active (running)`, unidad cargada y arranque automático `disabled`; proceso `/usr/bin/ollama serve`. Registro `Ollama cloud disabled: true`. Estado informa máximo de memoria 4,0 G; consumo puntual 13,2 M antes de cargar modelos.
+- **Incidencia:** recarga informa rc.local sin permiso ejecutable; no impide arranque de Ollama. Archivo ajeno sin modificar.
+- **Resultado:** servicio iniciado. Socket completo, CPUQuota efectivo, descarga de modelo e inferencia pendientes. No se acredita bloqueo general de salida de red.
+- **Siguiente paso:** comprobar escucha con `ss -ltnp 'sport = :11434'`.
+- **Recuperación:** parada controlada mediante `systemctl stop ollama` ante anomalías.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

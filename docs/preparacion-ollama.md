@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; unidad systemd guardada y validada sin mensajes tras correcciones; arranque pendiente.
+Fecha: 2026-10-18. Estado: servicio iniciado y activo; modo sin nube confirmado en registros. Inspección completa de escucha y límites, selección de modelo e inferencia pendientes.
 
 ## Base del laboratorio
 
@@ -182,7 +182,7 @@ Resultado: validación de unidad sin errores informados. Esta validación no eje
 
 ### Primer arranque controlado
 
-Comandos preparados, ejecución pendiente:
+Comandos ejecutados; salida de estado verificada:
 
 ```bash
 systemctl daemon-reload
@@ -192,4 +192,18 @@ systemctl status ollama --no-pager
 
 El arranque manual no habilita inicio automático al reiniciar. La salida de estado debe comprobarse antes de descargar modelos; después corresponde inspeccionar escucha, modo local y controles efectivos. La recuperación inmediata ante fallo o comportamiento inesperado es `systemctl stop ollama`, conservando los registros necesarios para diagnóstico.
 
-Pendientes de preparación: arranque del servicio, comprobación efectiva de red y recursos, selección de modelo y recuperación disponible. La unidad validada no acredita servicio operativo ni inferencia validada.
+Resultado observado: `active (running)`, unidad cargada y `disabled` para arranque automático. El proceso ejecuta `/usr/bin/ollama serve`. El estado informa límite de memoria 4,0 G y consumo puntual 13,2 M, sin inferencia ejecutada. Registro `Ollama cloud disabled: true` observado. El registro de escucha aparece abreviado en la salida y requiere consulta específica. CPU detectada como recurso de inferencia; no se acredita GPU.
+
+Durante la recarga apareció aviso de `/etc/rc.d/rc.local` sin permiso de ejecución; no impidió iniciar Ollama. No se modificó ese archivo ni su configuración.
+
+### Comprobación de escucha
+
+Comando preparado, ejecución pendiente:
+
+```bash
+ss -ltnp 'sport = :11434'
+```
+
+Criterio: dirección local `127.0.0.1:11434`, sin escucha en todas las interfaces. La comprobación de entrada no sustituye ensayo de conexiones salientes. CPUQuota y demás parámetros efectivos requieren inspección adicional.
+
+Pendientes de preparación: comprobación completa de red y recursos, selección de modelo y recuperación disponible. Servicio activo y modo sin nube no acreditan inferencia validada ni bloqueo efectivo de toda salida.
