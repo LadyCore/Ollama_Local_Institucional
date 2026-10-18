@@ -107,6 +107,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Condición de evaluación:** integración de MooChat sujeta a resolver o excluir verificablemente la ruta afectada y completar revisión del paquete. La validación independiente de Ollama continúa en la secuencia definida.
 - **Recuperación:** sin cambios en VM; revisión documental trazable.
 
+## 2026-10-18 — B011 — Preparación de instalación de Ollama
+
+- **Objetivo:** establecer los requisitos para instalar el servicio independiente en la VM existente.
+- **Estado:** preparación documental; comandos sin ejecutar en la VM.
+- **Acción:** consultar guía Linux y FAQ oficiales; contrastar requisitos con inventario registrado y preparar comprobaciones de herramientas, instalación previa, puerto y SELinux.
+- **Evidencia:** [preparación de Ollama](preparacion-ollama.md).
+- **Resultado:** instalación Linux amd64 con servicio dedicado, operación local y carga acotada; versión, modelo, ubicación y límites concretos pendientes de definición. Descarga de artefactos diferenciada de inferencia sin salida de datos.
+- **Recuperación:** sin cambios operativos; clonación previa todavía sin confirmación de finalización.
+- **Siguiente paso:** ejecutar la comprobación previa dentro de la VM y completar los parámetros de instalación.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
