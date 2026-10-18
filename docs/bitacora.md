@@ -171,6 +171,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** comprobar `/usr/bin/ollama --version` y preparar el usuario y servicio local.
 - **Recuperación:** inventario y retirada de archivos incorporados pendientes de completar; no se ejecutaron eliminaciones.
 
+## 2026-10-18 — B018 — Versión del cliente comprobada
+
+- **Estado:** ejecutado en la VM; salida verificada.
+- **Acción y comandos:** `/usr/bin/ollama --version`.
+- **Evidencia:** cliente 0.40.6; advertencia de falta de conexión a una instancia en ejecución.
+- **Resultado:** ejecutable y versión confirmados. Servicio todavía sin iniciar e inferencia sin probar.
+- **Siguiente paso:** creación y comprobación de la cuenta dedicada del servicio; paso preparado, ejecución pendiente.
+- **Recuperación:** no aplica; comprobación de versión.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

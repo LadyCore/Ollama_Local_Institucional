@@ -23,7 +23,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 ## Situación
 
-- Ollama: paquete v0.40.6 extraído en `/usr`, sin errores visibles. Versión del ejecutable pendiente de comprobación; servicio y modelo sin configurar; sin prueba de funcionamiento.
+- Ollama: paquete extraído en `/usr` y cliente 0.40.6 comprobado mediante `--version`. Advertencia de ausencia de instancia en ejecución observada; usuario, servicio y modelo sin configurar; inferencia sin probar.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).
 - Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Configuración de servicio, modelo y límites concretos pendientes. SELinux Enforcing en la comprobación inicial.
 - Modelos: ninguno seleccionado o descargado por este proyecto.

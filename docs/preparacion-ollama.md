@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: comprobación previa, dependencia, descarga y extracción completadas; comprobación del ejecutable y configuración del servicio pendientes.
+Fecha: 2026-10-18. Estado: comprobación previa, dependencia, descarga, extracción y versión del cliente verificadas; usuario y configuración del servicio pendientes.
 
 ## Base del laboratorio
 
@@ -90,12 +90,23 @@ tar --zstd -xf /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst -C /usr
 
 Resultado observado: retorno al prompt sin mensajes de error. El primer intento omitió `.zst` en el nombre y terminó sin encontrar el archivo; el segundo utilizó el nombre completo y finalizó sin errores visibles. Este paso coloca los archivos del paquete en `/usr`; no crea ni inicia por sí mismo el servicio systemd.
 
-Comprobación del ejecutable pendiente:
+Comprobación del ejecutable ejecutada:
 
 ```bash
 /usr/bin/ollama --version
 ```
 
-Al no estar iniciado el servicio, puede aparecer una advertencia de conexión junto con la versión del cliente. Esta consulta no acredita funcionamiento de inferencia.
+Resultado observado: `Warning: could not connect to a running Ollama instance` y `Warning: client version is 0.40.6`. Cliente ejecutable y versión confirmados; el servicio aún no está iniciado. Esta consulta no acredita funcionamiento de inferencia.
 
-Pendientes de preparación: comprobación del ejecutable, usuario de servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La extracción no acredita servicio operativo ni inferencia validada.
+### Usuario del servicio
+
+Paso pendiente como root: creación de cuenta de sistema y grupo propios, directorio de trabajo y shell sin inicio de sesión interactivo.
+
+```bash
+useradd -r -U -m -d /usr/share/ollama -s /sbin/nologin ollama
+id ollama
+```
+
+Si la cuenta ya existe, su configuración requiere comprobación antes de continuar; no se elimina ni reemplaza automáticamente. El servicio se configurará para ejecutarse con esta cuenta, sin privilegios de root.
+
+Pendientes de preparación: usuario de servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.
