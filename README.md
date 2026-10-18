@@ -10,6 +10,7 @@ Estado inicial: proyecto documentado el 18 de octubre de 2026. Instalación de O
 - [Entorno y estado](docs/estado.md): inventario confirmado, límites y próximos pasos.
 - [Plan de evaluación](docs/plan-evaluacion.md): instalación, restricciones, pruebas y criterios de cierre.
 - [Compatibilidad Moodle](docs/compatibilidad-moodle.md): matriz de candidatos y resultados.
+- [Seguridad y confidencialidad](docs/seguridad-confidencialidad.md): revisión oficial, controles propuestos y evidencia requerida.
 
 ## Método
 

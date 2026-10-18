@@ -25,4 +25,4 @@ Ante falta de memoria, degradación de Moodle/MySQL, exposición inesperada o en
 
 ## Fuentes
 
-La investigación oficial es la próxima etapa. Todavía no se registran recomendaciones de versiones, modelos o plugins ni se presenta documentación no consultada como evidencia.
+La revisión inicial oficial se registra en [seguridad y confidencialidad](seguridad-confidencialidad.md), con fecha, enlaces y distinción entre hechos documentados y controles propuestos. La selección de versiones, modelos y plugins continúa pendiente.

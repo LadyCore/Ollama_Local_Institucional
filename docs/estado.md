@@ -1,6 +1,6 @@
 # Entorno y estado
 
-Actualizado: 2026-10-18. Etapa: preparación documental.
+Actualizado: 2026-10-18. Etapa: revisión documental de seguridad completada; controles sin aplicar.
 
 ## Inventario de laboratorio confirmado
 
@@ -25,13 +25,13 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
-- Restricciones y límites: por diseñar y ensayar.
+- Restricciones y límites: propuesta inicial en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
 - Plugins: ninguno declarado compatible o habilitado por este proyecto.
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
 ## Próxima secuencia
 
-1. Consultar documentación oficial actual de Ollama para Linux, configuración, operación local y recursos.
+1. Revisión inicial oficial de Linux, privacidad, autenticación y seguridad realizada; seleccionar versión y revisar sus avisos antes de instalar.
 2. Preparar instalación y recuperación, decidir ubicación de modelos y límites considerando la convivencia con Moodle/MySQL.
 3. Instalar y comprobar localmente con un modelo adecuado al laboratorio y datos sintéticos.
 4. Evaluar restricciones y consumo; registrar fallos y límites.

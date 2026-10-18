@@ -23,6 +23,18 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** restaurar una revisión anterior de documentos mediante un cambio trazable, preservando el historial.
 - **Siguiente paso:** comenzar la evaluación técnica de instalación.
 
+## 2026-10-18 — B003 — Revisión de seguridad y confidencialidad
+
+- **Objetivo:** preparar fundamentos verificables para explicar protección de datos ante DIRINFO.
+- **Estado:** revisión documental verificada; controles propuestos, no ejecutados.
+- **Acción:** consultar fuentes oficiales de privacidad, FAQ, autenticación, Linux, diagnóstico, herramientas y política de seguridad del proyecto.
+- **Evidencia:** URLs y conclusiones en [seguridad y confidencialidad](seguridad-confidencialidad.md).
+- **Resultado:** distinguir inferencia local de nube, ausencia de autenticación local y responsabilidades de plugins/host. Definir controles de red, acceso, persistencia, privilegios, recursos y mantenimiento con pruebas de aceptación.
+- **Decisión propuesta:** comenzar con datos sintéticos, modo local y exposición restringida; verificar salida efectiva antes de admitir datos reales.
+- **Límites:** no se instalaron componentes ni modificaron servicios; no hay certificación de cumplimiento ni plugin validado.
+- **Recuperación:** no aplica a la VM; cambio exclusivamente documental.
+- **Siguiente paso:** seleccionar versión y convertir los controles en un procedimiento de instalación y prueba.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
