@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: comprobación previa ejecutada y salida verificada; dependencia Zstandard e instalación de Ollama pendientes.
+Fecha: 2026-10-18. Estado: comprobación previa y dependencia Zstandard verificadas; descarga e instalación de Ollama pendientes.
 
 ## Base del laboratorio
 
@@ -16,7 +16,7 @@ La instalación se realizará dentro de la VM con privilegios administrativos y 
 
 ## Requisitos y parámetros pendientes
 
-- Paquete oficial Linux amd64 y versión identificada antes de ejecutar la instalación.
+- Paquete oficial Linux amd64 v0.40.6 identificado para descarga; extracción e instalación pendientes.
 - Herramientas de descarga y certificados TLS; `tar` y soporte Zstandard para el archivo `.tar.zst` si se utiliza ese método.
 - Acceso HTTPS durante la preparación para obtener software y modelo, o transferencia de artefactos previamente descargados y verificados. La descarga se distingue de la inferencia local posterior.
 - Usuario de servicio dedicado, servicio systemd y directorio de modelos con permisos exclusivos del servicio según necesidad. Ubicación y límites de CPU/RAM pendientes de definición.
@@ -52,7 +52,7 @@ Salida aportada el 2026-10-18:
 
 ### Preparación de la dependencia
 
-Paso pendiente, ejecutado como root dentro de la VM:
+Paso ejecutado como root dentro de la VM y verificado mediante salida de instalación y consulta:
 
 ```bash
 dnf install zstd
@@ -60,5 +60,22 @@ rpm -q zstd
 ```
 
 La transacción debe limitarse al paquete y sus dependencias necesarias; cualquier eliminación o cambio ajeno al objetivo requiere revisión antes de aceptar. La salida de instalación y consulta acredita el cierre de este paso. SELinux conserva el modo Enforcing.
+
+Resultado: `zstd-1.5.5-1.el9.x86_64` instalado desde BaseOS. Una instalación, sin actualizaciones ni eliminaciones informadas en la transacción.
+
+### Descarga del paquete identificado
+
+Fuente: [release oficial v0.40.6](https://github.com/ollama/ollama/releases/tag/v0.40.6), publicada el 2026-10-16 y señalada como última release no preliminar por la API de GitHub al consultar. Archivo `ollama-linux-amd64.tar.zst`, tamaño 1438364593 bytes. Digest publicado: `sha256:c164ab8b1b28e2a247c29719b8e404c423c5b83ae64c3ab4e59d50c7ff7fc5e0`.
+
+Método de preparación: descarga del archivo versionado, comprobación de hash y posterior extracción manual. La descarga no ejecuta el instalador ni inicia el servicio. La identificación de release no constituye auditoría completa de seguridad.
+
+Comandos preparados, ejecución pendiente:
+
+```bash
+curl -fL --retry 3 -o /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst https://github.com/ollama/ollama/releases/download/v0.40.6/ollama-linux-amd64.tar.zst
+sha256sum /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst
+```
+
+El hash debe coincidir con el digest publicado antes de extraer o ejecutar. La extracción, el usuario, el servicio y sus restricciones corresponden al paso posterior. El archivo temporal de preparación se incluye en el inventario de almacenamiento y limpieza.
 
 Evidencia requerida: recuperación disponible, herramientas presentes, ausencia de conflicto con servicio previo, versión y modelo seleccionados, configuración de servicio y recursos definida. La instalación aún no se considera ejecutada.

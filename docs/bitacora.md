@@ -135,6 +135,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Evidencia:** [componentes y fuente oficial](preparacion-ollama.md).
 - **Situación operativa:** sin nuevos cambios acreditados en la VM; instalación de zstd pendiente de confirmación.
 
+## 2026-10-18 — B014 — Zstandard instalado y paquete Ollama identificado
+
+- **Objetivo:** completar la dependencia de extracción y fijar el artefacto de instalación.
+- **Estado:** dependencia ejecutada y salida verificada; descarga de Ollama pendiente.
+- **Acción y comandos:** `dnf install zstd` y `rpm -q zstd` ejecutados en la VM. Consulta documental de guía Linux y metadatos de release oficial mediante API de GitHub.
+- **Evidencia:** instalación satisfactoria de `zstd-1.5.5-1.el9.x86_64` desde BaseOS. Release oficial Ollama v0.40.6, paquete amd64 y digest registrados en [preparación](preparacion-ollama.md).
+- **Resultado:** dependencia completa. Preparada descarga versionada con comprobación de hash, anterior a extracción y configuración de servicio. Ollama todavía sin instalación acreditada.
+- **Recuperación:** cambio limitado al paquete Zstandard; estado anterior conservado en la bitácora. Clonación previa sin confirmación adicional.
+- **Siguiente paso:** descargar el archivo y verificar SHA-256 antes de instalar.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
