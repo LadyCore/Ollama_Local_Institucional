@@ -97,6 +97,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Pendiente:** revisión del historial de Git antes de cualquier publicación; las revisiones anteriores pueden conservar referencias retiradas de los archivos vigentes.
 - **Recuperación:** historial existente preservado, sin reescritura.
 
+## 2026-10-18 — B010 — Antecedentes públicos y condición de seguridad de MooChat
+
+- **Objetivo:** identificar aportes de ChatOllama y antecedentes aplicables a la integración local.
+- **Estado:** documentación consultada y patrón de código contrastado; ejecución pendiente.
+- **Acción:** consultar README y documentación web de ChatOllama a revisión fija, fuentes oficiales e incidencias de MooChat; comparar reporte #13 con lib.php de la revisión ya identificada.
+- **Evidencia:** [antecedentes y fuentes](antecedentes-github.md).
+- **Resultado:** ChatOllama aporta referencias de arquitectura, con componentes adicionales fuera de alcance. En MooChat se confirma la presencia del patrón de extracción XML señalado por un reporte público abierto; explotación y alcance efectivo no reproducidos.
+- **Condición de evaluación:** integración de MooChat sujeta a resolver o excluir verificablemente la ruta afectada y completar revisión del paquete. La validación independiente de Ollama continúa en la secuencia definida.
+- **Recuperación:** sin cambios en VM; revisión documental trazable.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

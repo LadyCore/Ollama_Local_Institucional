@@ -11,6 +11,7 @@ Estado inicial: proyecto documentado el 18 de octubre de 2026. Instalación de O
 - [Protocolo de evaluación](docs/plan-evaluacion.md): secuencia de trabajo, restricciones, pruebas y criterios de cierre.
 - [Compatibilidad Moodle](docs/compatibilidad-moodle.md): matriz de candidatos y resultados.
 - [Seguridad y confidencialidad](docs/seguridad-confidencialidad.md): fundamentos, requisitos de validación y evidencia requerida.
+- [Antecedentes en GitHub](docs/antecedentes-github.md): referencias de arquitectura e incidencias contrastadas con código.
 
 ## Método
 

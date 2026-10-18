@@ -24,6 +24,10 @@ Código: [envío](https://github.com/bapool/moodle-mod_moochat/blob/01ac171790fa
 
 ## Configuración de referencia para el primer ensayo
 
+### Condición de seguridad previa
+
+El [reporte público #13 y su contraste con el código](antecedentes-github.md) identifican una ruta de extracción PPTX con sustitución de entidades XML. La integración queda condicionada a su resolución o exclusión verificable y a completar la revisión del paquete. El reporte no se reprodujo en el laboratorio. La preferencia funcional por MooChat no acredita habilitación de esta versión.
+
 El recorrido definido para el laboratorio es Moodle → Ollama local. La primera prueba se limita a consulta de material con datos sintéticos. Permanecen pendientes de definición los parámetros de la actividad: calificación, objetivos, selección de archivos, incorporación de sección y límite horario. Los casos de validación comprenden extracción fallida, pregunta fuera del material, acceso sin permiso y contenido demasiado largo, junto con salida de red y persistencia en Moodle, servicio de inferencia, temporales y copias.
 
 El modo de sección puede incorporar más contenido que los archivos elegidos y tiene otras rutas de extracción; su habilitación requiere una decisión de configuración específica. La lectura completa de documentos en cada envío puede afectar memoria y longitud de contexto. La capacidad de la VM queda pendiente de medición.

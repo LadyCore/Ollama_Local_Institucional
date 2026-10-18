@@ -29,6 +29,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 - Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.
+- Antecedentes: [ChatOllama y fuentes directamente aplicables](antecedentes-github.md) registrados. Reporte de seguridad de MooChat sobre extracción PPTX contrastado con código; integración condicionada a resolución o exclusión verificable de la ruta. Sin reproducción local.
 
 ## Alcance de la primera prueba
 
