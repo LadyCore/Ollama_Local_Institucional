@@ -28,6 +28,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
+- Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.
 
 ## Alcance de la primera prueba
 
@@ -40,6 +41,6 @@ Primera prueba pequeña y progresiva: validar Ollama local sin conexiones extern
 3. Instalación y comprobación de inferencia local con datos sintéticos.
 4. Validación de restricciones de red, persistencia y consumo.
 5. Comprobación de versiones efectivas del entorno, revisión final de MooChat e integración acotada.
-6. Consolidación de resultados para la propuesta técnica ante DIRINFO.
+6. Consolidación de resultados para la propuesta técnica ante la instancia jerárquica superior.
 
 El ensayo de migración de MySQL a MariaDB previsto en otro clon constituye trabajo independiente. No se registra una migración ejecutada ni se modifica el inventario confirmado de este laboratorio.

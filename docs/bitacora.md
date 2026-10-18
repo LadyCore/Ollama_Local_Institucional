@@ -4,7 +4,7 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 
 ## 2026-10-18 — B001 — Apertura y alcance
 
-- **Objetivo:** explorar Ollama local, configuraciones y restricciones, y compatibilidad de plugins Moodle para una futura presentación técnica ante DIRINFO.
+- **Objetivo:** explorar Ollama local, configuraciones y restricciones, y compatibilidad de plugins Moodle para una futura presentación técnica ante la instancia jerárquica superior.
 - **Acción:** recuperar antecedentes del trabajo anterior, consultar configuración de VirtualBox y consolidar las salidas de sistema aportadas por la administradora.
 - **Evidencia:** lectura local de asignación de CPU/RAM; salidas de `cat /etc/os-release`, `uname -m`, `lscpu`, `free -h` y `df -h / /var /home`. Resumen anonimizado en [estado](estado.md).
 - **Resultado verificado:** CentOS Stream 9 x86_64, 6 CPU virtuales, RAM visible 8,5 GiB y disponible 7,4 GiB; 63 GB libres en raíz y 146 GB en /home. MySQL confirmado por la administradora, sin versión exacta registrada.
@@ -25,7 +25,7 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 
 ## 2026-10-18 — B003 — Revisión de seguridad y confidencialidad
 
-- **Objetivo:** preparar fundamentos verificables para explicar protección de datos ante DIRINFO.
+- **Objetivo:** preparar fundamentos verificables para explicar protección de datos ante el organismo correspondiente.
 - **Estado:** revisión documental verificada; controles propuestos, no ejecutados.
 - **Acción:** consultar fuentes oficiales de privacidad, FAQ, autenticación, Linux, diagnóstico, herramientas y política de seguridad del proyecto.
 - **Evidencia:** URLs y conclusiones en [seguridad y confidencialidad](seguridad-confidencialidad.md).
@@ -87,6 +87,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Situación operativa:** clonación previa anunciada, sin confirmación de finalización. La migración MySQL/MariaDB prevista para otro clon es independiente del ensayo de IA.
 - **Recuperación:** revisión documental anterior conservada en el historial del repositorio.
 - **Siguiente paso:** completar la preparación del entorno y definir los parámetros de instalación de Ollama.
+
+## 2026-10-18 — B009 — Generalización de referencias institucionales
+
+- **Objetivo:** mantener documentación reutilizable sin identificar las áreas del entorno de aplicación.
+- **Estado:** referencias actualizadas en la documentación vigente.
+- **Acción:** reemplazar nombres y siglas de organismos por denominaciones genéricas en README, estado, fundamentos de seguridad y entradas cronológicas; registrar el criterio editorial permanente.
+- **Resultado:** se conserva la cronología y la atribución de fuentes públicas de software. El repositorio permanece privado.
+- **Pendiente:** revisión del historial de Git antes de cualquier publicación; las revisiones anteriores pueden conservar referencias retiradas de los archivos vigentes.
+- **Recuperación:** historial existente preservado, sin reescritura.
 
 ## Formato de nuevas entradas
 

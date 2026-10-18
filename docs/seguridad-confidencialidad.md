@@ -48,6 +48,6 @@ Las revisiones parciales de [MooChat](revision-moochat.md) y [Terus RAG](revisio
 
 Estado acreditado: arquitectura local evaluable, con controles pendientes de ensayo. No se dispone de evidencia de aislamiento efectivo ni de aptitud para datos sensibles o clasificados. Toda declaración de cumplimiento requiere correspondencia con requisitos institucionales y pruebas registradas.
 
-DIRINFO deberá determinar categorías de datos permitidas, responsables, accesos, retención, requisitos de cifrado, respuesta a incidentes y aceptación de riesgos. Esta revisión no sustituye esas políticas internas, que no se han aportado, ni acredita certificaciones, acuerdos de tratamiento o niveles de servicio.
+El organismo correspondiente deberá determinar categorías de datos permitidas, responsables, accesos, retención, requisitos de cifrado, respuesta a incidentes y aceptación de riesgos. Esta revisión no sustituye esas políticas internas, que no se han aportado, ni acredita certificaciones, acuerdos de tratamiento o niveles de servicio.
 
 La primera prueba utiliza texto sintético, sin cuenta cloud ni integraciones externas. El registro incluye resultados satisfactorios, fallos y limitaciones. La aprobación para datos reales corresponde a una etapa institucional posterior.
