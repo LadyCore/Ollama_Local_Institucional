@@ -26,7 +26,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: propuesta inicial en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Plugins: ninguno declarado compatible o habilitado por este proyecto.
+- Plugins: cuatro candidatos externos y una vía incluida documentados para la rama 4.5 en [compatibilidad](compatibilidad-moodle.md); objetivo solicitado 4.5.8. Ninguno ensayado ni habilitado.
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
 ## Próxima secuencia

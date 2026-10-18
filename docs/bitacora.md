@@ -35,6 +35,18 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no aplica a la VM; cambio exclusivamente documental.
 - **Siguiente paso:** seleccionar versión y convertir los controles en un procedimiento de instalación y prueba.
 
+## 2026-10-18 — B004 — Candidatos para Moodle 4.5.8 y Ollama
+
+- **Objetivo:** identificar funciones disponibles para orientar la elección posterior de usos.
+- **Estado:** investigación documental verificada; ensayo pendiente.
+- **Acción:** consultar MoodleDocs 4.5, fichas y versiones de Marketplace y repositorios de autores.
+- **Evidencia:** enlaces, releases y builds en [matriz](compatibilidad-moodle.md).
+- **Resultado:** proveedor incluido y cuatro plugins con soporte declarado 4.5/Ollama; distinción de Stable/Alpha y puntos de seguridad de cada candidato.
+- **Decisión propuesta:** comenzar por conexión core; escoger luego editor, chat o RAG según evaluación. No asumir compatibilidad exacta del entorno ni cadenas de datos completamente locales sin ensayo.
+- **Límites:** sin instalación, auditoría completa de código o prueba funcional. No se crearon cursos.
+- **Recuperación:** no aplica a VM; actualización documental.
+- **Siguiente paso:** instalar y validar Ollama antes de ensayar integraciones; revisar paquete exacto y dependencias del candidato elegido.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
