@@ -1,6 +1,6 @@
 # Entorno y estado
 
-Actualizado: 2026-10-18. Etapa: revisión documental de seguridad completada; controles sin aplicar.
+Actualizado: 2026-10-18. Etapa: Ollama instalado; escucha local y parámetros de recursos comprobados. Inferencia y controles de salida pendientes de ensayo.
 
 ## Inventario de laboratorio confirmado
 
@@ -25,10 +25,10 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 - Ollama: 0.40.6 iniciado, `active (running)`, con cuenta dedicada y unidad validada. Arranque automático `disabled`. Registro de nube deshabilitada confirmado. Modelo sin descargar e inferencia sin probar.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).
-- Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Configuración de servicio, modelo y límites concretos pendientes. SELinux Enforcing en la comprobación inicial.
-- Modelos: ninguno seleccionado o descargado por este proyecto.
+- Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Servicio configurado; descarga de modelo pendiente. SELinux Enforcing en la comprobación inicial.
+- Modelos: `qwen3:1.7b` propuesto para la primera prueba técnica; descarga e inferencia pendientes. No constituye selección para producción.
 - Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Servicio: [arranque y socket comprobados](preparacion-ollama.md). Escucha TCP `127.0.0.1:11434` asociada a Ollama. Estado informa máximo de memoria 4,0 G; consulta detallada de CPUQuota, memoria y usuario pendiente. Ensayo de salida de red, colas y tiempos de espera pendiente.
+- Servicio: [arranque y socket comprobados](preparacion-ollama.md). Escucha TCP `127.0.0.1:11434` asociada a Ollama. Propiedades verificadas: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`. Ensayo bajo carga, salida de red, colas y tiempos de espera pendiente.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 - Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas; README limitado a descripción y método técnico. Reglas de actuación del asistente en AGENTS.md. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.

@@ -260,6 +260,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** comprobar cuota CPU, memoria y usuario mediante propiedades de systemd.
 - **Recuperación:** no aplica; inspección de solo lectura.
 
+## 2026-10-18 — B028 — Parámetros de recursos verificados
+
+- **Estado:** verificado mediante salida aportada.
+- **Objetivo y comando:** comprobar configuración efectiva con `systemctl show ollama -p CPUQuotaPerSecUSec -p MemoryMax -p User`.
+- **Evidencia:** `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`.
+- **Incidencia:** primera consulta omitió la cuota por transcripción de `USec`; consulta corregida satisfactoria.
+- **Resultado:** cuota CPU, techo de 4 GiB y usuario dedicado confirmados. Rendimiento y consumo bajo carga pendientes.
+- **Recuperación:** no aplica; consulta de solo lectura.
+- **Siguiente paso:** descarga propuesta de `qwen3:1.7b` para prueba técnica pequeña; fuente, tamaño y estado pendiente en [preparación](preparacion-ollama.md). No se registra descarga ni aprobación para producción.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
