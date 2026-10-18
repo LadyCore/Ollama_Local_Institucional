@@ -127,6 +127,14 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** instalar zstd y verificar el paquete. Comandos documentados, sin ejecución acreditada todavía.
 - **Recuperación:** no aplica; comprobación de solo lectura.
 
+## 2026-10-18 — B013 — Separación de componentes de la instalación
+
+- **Objetivo:** explicitar qué incluye Moodle 4.5 y qué requiere incorporación independiente.
+- **Estado:** requisito documental verificado con MoodleDocs 4.5.
+- **Resultado:** el subsistema IA y el conector forman parte de Moodle; Ollama se instala en el sistema operativo, los modelos se descargan por separado y MooChat se incorpora como actividad adicional en una etapa posterior.
+- **Evidencia:** [componentes y fuente oficial](preparacion-ollama.md).
+- **Situación operativa:** sin nuevos cambios acreditados en la VM; instalación de zstd pendiente de confirmación.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

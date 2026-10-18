@@ -4,6 +4,12 @@ Fecha: 2026-10-18. Estado: comprobación previa ejecutada y salida verificada; d
 
 ## Base del laboratorio
 
+### Componentes independientes
+
+Ollama no forma parte de la distribución estándar de Moodle 4.5 y requiere instalación independiente en el sistema operativo. Moodle 4.5 incluye el subsistema de IA y el conector `aiprovider_openai`, que puede configurarse para comunicarse con Ollama local mediante su API compatible. Los modelos se descargan por separado. MooChat es una actividad adicional para Moodle y su instalación corresponde a una etapa posterior.
+
+La [documentación oficial de Moodle 4.5](https://docs.moodle.org/405/en/Ollama) establece como requisitos separados Moodle en funcionamiento, Ollama instalado y un modelo disponible. La presencia del conector en Moodle no acredita instalación del motor ni disponibilidad de modelos.
+
 Entorno registrado: CentOS Stream 9 x86_64, 6 CPU virtuales, 8,5 GiB de RAM visible y 63 GB libres en raíz en la muestra inicial. La primera evaluación se dimensiona para un modelo pequeño y una solicitud a la vez; memoria efectiva y rendimiento requieren medición. No se acredita GPU disponible en el invitado.
 
 La instalación se realizará dentro de la VM con privilegios administrativos y recuperación previa disponible. La clonación anunciada permanece pendiente de confirmación. Moodle, PHP y MySQL no requieren actualización para instalar el servicio independiente.
