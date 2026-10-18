@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: comprobación previa, dependencia, descarga, extracción y versión del cliente verificadas; usuario y configuración del servicio pendientes.
+Fecha: 2026-10-18. Estado: cliente verificado y cuenta dedicada creada; corrección del shell y configuración del servicio pendientes.
 
 ## Base del laboratorio
 
@@ -100,7 +100,7 @@ Resultado observado: `Warning: could not connect to a running Ollama instance` y
 
 ### Usuario del servicio
 
-Paso pendiente como root: creación de cuenta de sistema y grupo propios, directorio de trabajo y shell sin inicio de sesión interactivo.
+Cuenta y grupo creados como root; `id ollama` confirma uid 995, gid 994 y pertenencia al grupo propio. Se observó advertencia por ruta de shell mal transcrita; el shell sin inicio de sesión interactivo requiere corrección.
 
 ```bash
 useradd -r -U -m -d /usr/share/ollama -s /sbin/nologin ollama
@@ -109,4 +109,13 @@ id ollama
 
 Si la cuenta ya existe, su configuración requiere comprobación antes de continuar; no se elimina ni reemplaza automáticamente. El servicio se configurará para ejecutarse con esta cuenta, sin privilegios de root.
 
-Pendientes de preparación: usuario de servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.
+Corrección pendiente de la cuenta existente:
+
+```bash
+usermod -s /sbin/nologin ollama
+getent passwd ollama
+```
+
+La última columna debe ser `/sbin/nologin`. Esta corrección no requiere recrear la cuenta ni cambiar su uid/gid.
+
+Pendientes de preparación: corrección del shell de la cuenta, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.

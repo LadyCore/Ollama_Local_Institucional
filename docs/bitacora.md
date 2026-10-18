@@ -180,6 +180,14 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** creación y comprobación de la cuenta dedicada del servicio; paso preparado, ejecución pendiente.
 - **Recuperación:** no aplica; comprobación de versión.
 
+## 2026-10-18 — B019 — Cuenta dedicada creada con corrección pendiente
+
+- **Estado:** creación ejecutada y cuenta comprobada; corrección pendiente.
+- **Acción:** `useradd` con cuenta/grupo propios y directorio `/usr/share/ollama`; consulta `id ollama`.
+- **Evidencia:** uid 995, gid 994, grupo propio. Advertencia de shell ausente o no ejecutable por error de transcripción de la ruta.
+- **Resultado:** cuenta existente; no requiere recreación. Servicio todavía sin configurar.
+- **Recuperación y siguiente paso:** corregir únicamente el shell mediante `usermod -s /sbin/nologin ollama` y comprobar el registro de la cuenta.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
