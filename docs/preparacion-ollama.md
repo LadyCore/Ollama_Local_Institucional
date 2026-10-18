@@ -149,4 +149,25 @@ Parámetros iniciales de laboratorio: memoria máxima de 4 GiB para el grupo del
 
 La configuración de variables sigue la [FAQ oficial](https://docs.ollama.com/faq). Después del guardado corresponde validar la unidad, recargar systemd e inspeccionar los parámetros antes del primer arranque; esos pasos no se consideran ejecutados por incluir el contenido aquí.
 
+### Función de las directivas
+
+| Directiva | Efecto |
+|---|---|
+| `[Unit]`, `Description` | Sección general y nombre descriptivo del servicio |
+| `[Service]` | Sección de ejecución, identidad, variables y límites |
+| `User`, `Group` | Identidad de ejecución del servicio; no le concede privilegios de root ni constituye aislamiento completo del sistema de archivos |
+| `ExecStart` | Ejecuta el servidor de Ollama con la ruta del binario instalado |
+| `Environment` | Define una variable que recibe el proceso. La escritura de la directiva debe ser exacta |
+| `OLLAMA_HOST` | Restringe la escucha de la API a loopback en el puerto 11434; no bloquea conexiones salientes |
+| `OLLAMA_NO_CLOUD` | Deshabilita las funciones de nube de Ollama; no sustituye controles de salida del sistema ni controla otros programas |
+| `OLLAMA_MAX_LOADED_MODELS` | Limita a uno los modelos cargados simultáneamente; no limita cuántos archivos de modelos pueden almacenarse |
+| `OLLAMA_NUM_PARALLEL` | Una solicitud procesada a la vez por modelo; otras pueden esperar en cola. No limita por sí mismo a un usuario |
+| `MemoryMax` | Techo de 4 GiB para el grupo del servicio; no reserva memoria. Si no se recupera memoria al alcanzar el límite, puede actuar el mecanismo OOM. Swap requiere control separado |
+| `CPUQuota` | Presupuesto máximo equivalente al tiempo de dos CPU; no afinidad a dos núcleos específicos ni reserva de capacidad |
+| `[Install]`, `WantedBy` | Relación de arranque utilizada al habilitar la unidad. Guardar el archivo no inicia ni habilita automáticamente el servicio |
+
+Fuentes de semántica systemd: [servicios](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html) y [control de recursos](https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html). Los valores 4 GiB y 200% son parámetros iniciales del ensayo; no requisitos mínimos oficiales de Ollama.
+
+Revisión visual del archivo en edición: las cuatro directivas de variables aparecen como `Enviroment`; corrección requerida a `Environment` antes de guardar y validar. Las demás líneas visibles coinciden con la unidad preparada. No se acredita guardado ni aplicación de la configuración a partir de esta revisión.
+
 Pendientes de preparación: servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.

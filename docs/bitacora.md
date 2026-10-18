@@ -214,6 +214,14 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** completar el archivo de servicio y verificarlo antes de iniciar; no se acredita configuración aplicada todavía.
 - **Recuperación:** unidad sin arranque acreditado; retirada del archivo preparado o restauración de su revisión previa si corresponde.
 
+## 2026-10-18 — B023 — Revisión visual de la unidad en edición
+
+- **Estado:** archivo en edición inspeccionado visualmente; corrección, guardado y validación pendientes.
+- **Resultado:** cuatro directivas de variables escritas `Enviroment` requieren corrección a `Environment`. Las demás líneas visibles coinciden con el contenido preparado.
+- **Acción documental:** incorporar función, alcance y límites de las directivas con fuentes oficiales; distinguir controles de escucha, nube y recursos del bloqueo efectivo de salida.
+- **Evidencia:** [configuración y explicación técnica](preparacion-ollama.md). Sin captura original en el repositorio.
+- **Siguiente paso:** corregir la directiva, guardar y validar la unidad antes de iniciar.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
