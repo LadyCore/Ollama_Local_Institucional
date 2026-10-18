@@ -47,6 +47,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no aplica a VM; actualización documental.
 - **Siguiente paso:** instalar y validar Ollama antes de ensayar integraciones; revisar paquete exacto y dependencias del candidato elegido.
 
+## 2026-10-18 — B005 — Revisión dirigida de Terus RAG
+
+- **Objetivo:** comprobar procesamiento local, alcance por curso y persistencia antes de instalar.
+- **Estado:** código v1.0.9 inspeccionado; pruebas dinámicas no realizadas.
+- **Resultado:** destino local configurable para generación/embeddings; índice en base Moodle. Se detecta búsqueda global, courseid no aplicado y extracción Ollama limitada a resumen/nombre del curso. También se observan valores externos por defecto y verificación TLS desactivada.
+- **Evidencia:** [revisión con enlaces al código](revision-terusrag.md).
+- **Decisión propuesta:** no instalar esta versión para la primera prueba de materiales por curso; mantener la validación de Ollama separada. No ampliar a desarrollo de un fork.
+- **Alcance confirmado:** avance pequeño, progresivo y documentado; otros plugins son posibilidades futuras. Las decisiones académicas y de adopción corresponden a las áreas responsables.
+- **Recuperación:** no aplica a la VM; no hubo cambios.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

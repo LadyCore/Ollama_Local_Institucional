@@ -29,7 +29,11 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Plugins: cuatro candidatos externos y una vía incluida documentados para la rama 4.5 en [compatibilidad](compatibilidad-moodle.md); objetivo solicitado 4.5.8. Ninguno ensayado ni habilitado.
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
-## Próxima secuencia
+## Alcance inmediato corregido
+
+Primera prueba pequeña y progresiva: validar Ollama local sin conexiones externas y evaluar una consulta acotada de material de curso. No habilitar múltiples funciones ni decidir usos académicos. Los demás candidatos quedan como referencias futuras. Terus RAG v1.0.9 no supera la revisión dirigida para ese objetivo: ver [hallazgos](revision-terusrag.md). No se instala ni se desarrolla un fork en este paso.
+
+## Secuencia de referencia, no compromiso de ejecución inmediata
 
 1. Revisión inicial oficial de Linux, privacidad, autenticación y seguridad realizada; seleccionar versión y revisar sus avisos antes de instalar.
 2. Preparar instalación y recuperación, decidir ubicación de modelos y límites considerando la convivencia con Moodle/MySQL.

@@ -4,6 +4,10 @@ Consulta: 2026-10-18. Objetivo solicitado: Moodle 4.5.8. Estado: compatibilidad 
 
 Antes de clasificar candidatos, recuperar o verificar las versiones exactas del Moodle del clon y de sus dependencias. No utilizar como sustituto las versiones del laboratorio de actualización a Moodle 5.3.
 
+## Revisión posterior de Terus RAG
+
+La [revisión dirigida de v1.0.9](revision-terusrag.md) encuentra búsqueda global sin delimitación por curso y un indexador Ollama limitado a resúmenes/nombres de cursos. No recomendar esta versión sin cambios para consultar material de un curso. Las filas siguientes conservan la compatibilidad declarada del catálogo, no una aprobación técnica.
+
 ## Candidatos documentados
 
 Los rangos publicados incluyen Moodle 4.5, no un certificado de funcionamiento específico en 4.5.8. Antes de instalar: revisar version.php, dependencias, PHP, licencia del paquete, avisos de seguridad y cambios de la versión exacta.
