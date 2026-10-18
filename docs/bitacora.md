@@ -231,6 +231,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Pendiente de ensayo:** consultas en cola y tiempos de espera de Moodle con paralelismo inicial de una solicitud.
 - **Siguiente paso:** `systemd-analyze verify /etc/systemd/system/ollama.service`, antes de recarga y arranque.
 
+## 2026-10-18 — B025 — Validación de unidad completada tras correcciones
+
+- **Estado:** validación ejecutada; última salida sin mensajes de error.
+- **Acción y comandos:** corrección del archivo y repetición de `systemd-analyze verify /etc/systemd/system/ollama.service`.
+- **Incidencias:** directivas mal transcritas de ExecStart y Environment y sección Install incorrecta. La revisión visual previa no identificó todos los errores; el validador permitió localizarlos. Último guardado: 20 líneas, 320 bytes.
+- **Resultado:** unidad validada sin mensajes, con retorno al prompt. Servicio sin arranque acreditado todavía.
+- **Siguiente paso:** recarga de systemd, inicio manual y consulta de estado; después inspección de controles efectivos.
+- **Recuperación:** corrección del archivo y nueva validación; sin cambios en servicios ajenos.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

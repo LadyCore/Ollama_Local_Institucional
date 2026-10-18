@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; unidad systemd guardada, pendiente de validación y arranque.
+Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; unidad systemd guardada y validada sin mensajes tras correcciones; arranque pendiente.
 
 ## Base del laboratorio
 
@@ -168,16 +168,28 @@ La configuración de variables sigue la [FAQ oficial](https://docs.ollama.com/fa
 
 Fuentes de semántica systemd: [servicios](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html) y [control de recursos](https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html). Los valores 4 GiB y 200% son parámetros iniciales del ensayo; no requisitos mínimos oficiales de Ollama.
 
-Revisión visual: corregidas las cuatro directivas a `Environment`; las demás líneas visibles coinciden con la unidad preparada. Guardado confirmado por el editor: `/etc/systemd/system/ollama.service`, 20 líneas, 321 bytes, retorno al prompt. La validación de systemd y la aplicación efectiva permanecen pendientes.
+La revisión visual inicial no detectó todos los errores de transcripción. La validación posterior identificó directivas incorrectas de `ExecStart`, `Environment` y sección `[Install]`; se corrigieron y se repitió la validación. Último guardado confirmado: `/etc/systemd/system/ollama.service`, 20 líneas, 320 bytes. Aplicación efectiva de los parámetros pendiente de comprobación.
 
 ### Validación previa al arranque
 
-Comando preparado, ejecución pendiente:
+Comando ejecutado; salida final sin mensajes y retorno al prompt:
 
 ```bash
 systemd-analyze verify /etc/systemd/system/ollama.service
 ```
 
-La salida debe revisarse antes de recargar systemd e iniciar. Esta validación no ejecuta inferencia ni acredita aislamiento de red. Queda registrado para ensayo posterior el comportamiento de consultas en cola, concurrencia y tiempos de espera de Moodle con `OLLAMA_NUM_PARALLEL=1`.
+Resultado: validación de unidad sin errores informados. Esta validación no ejecuta inferencia ni acredita aislamiento de red. Queda registrado para ensayo posterior el comportamiento de consultas en cola, concurrencia y tiempos de espera de Moodle con `OLLAMA_NUM_PARALLEL=1`.
 
-Pendientes de preparación: validación y arranque del servicio, comprobación efectiva de red y recursos, selección de modelo y recuperación disponible. La unidad guardada no acredita servicio operativo ni inferencia validada.
+### Primer arranque controlado
+
+Comandos preparados, ejecución pendiente:
+
+```bash
+systemctl daemon-reload
+systemctl start ollama
+systemctl status ollama --no-pager
+```
+
+El arranque manual no habilita inicio automático al reiniciar. La salida de estado debe comprobarse antes de descargar modelos; después corresponde inspeccionar escucha, modo local y controles efectivos. La recuperación inmediata ante fallo o comportamiento inesperado es `systemctl stop ollama`, conservando los registros necesarios para diagnóstico.
+
+Pendientes de preparación: arranque del servicio, comprobación efectiva de red y recursos, selección de modelo y recuperación disponible. La unidad validada no acredita servicio operativo ni inferencia validada.

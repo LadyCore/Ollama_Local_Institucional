@@ -23,12 +23,12 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 ## Situación
 
-- Ollama: paquete extraído en `/usr` y cliente 0.40.6 comprobado. Cuenta dedicada verificada: uid 995, gid 994, directorio `/usr/share/ollama`, shell `/sbin/nologin`. Unidad de servicio guardada; validación, arranque y modelo pendientes; inferencia sin probar.
+- Ollama: paquete extraído en `/usr` y cliente 0.40.6 comprobado. Cuenta dedicada verificada: uid 995, gid 994, directorio `/usr/share/ollama`, shell `/sbin/nologin`. Unidad de servicio guardada y validada sin mensajes tras correcciones. Arranque y modelo pendientes; inferencia sin probar.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).
 - Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Configuración de servicio, modelo y límites concretos pendientes. SELinux Enforcing en la comprobación inicial.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Servicio: [unidad inicial guardada](preparacion-ollama.md), con directivas `Environment` corregidas. Validación y aplicación efectiva pendientes. Parámetros: escucha local, nube deshabilitada, un modelo/solicitud, MemoryMax 4 GiB y CPUQuota 200%. Ensayo posterior de colas y tiempos de espera pendiente.
+- Servicio: [unidad inicial validada](preparacion-ollama.md); arranque y aplicación efectiva pendientes. Parámetros: escucha local, nube deshabilitada, un modelo/solicitud, MemoryMax 4 GiB y CPUQuota 200%. Ensayo posterior de colas y tiempos de espera pendiente.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 - Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas; README limitado a descripción y método técnico. Reglas de actuación del asistente en AGENTS.md. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.
