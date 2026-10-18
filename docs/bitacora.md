@@ -280,6 +280,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación prevista:** `ollama rm qwen3:1.7b` permite retirar el modelo si se descarta; no ejecutado.
 - **Siguiente paso:** registrar identificador y tamaño mediante `ollama ls`, seguido de una consulta sintética.
 
+## 2026-10-18 — B030 — Identificador local del modelo comprobado
+
+- **Objetivo:** registrar la distribución efectivamente descargada.
+- **Estado:** verificado.
+- **Acción y comando:** `ollama ls`.
+- **Evidencia:** `qwen3:1.7b`, identificador `8f68893c685c`, tamaño 1,4 GB.
+- **Resultado:** identificador coincidente con el catálogo consultado. Inferencia todavía pendiente.
+- **Recuperación:** no aplica; inspección de solo lectura.
+- **Siguiente paso:** primera consulta sintética definida en [preparación](preparacion-ollama.md).
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

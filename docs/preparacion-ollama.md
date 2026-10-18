@@ -236,4 +236,12 @@ Esta etapa requiere acceso externo al registro de modelos para obtener los archi
 
 Evidencia: capas al 100%, `verifying sha256 digest`, `writing manifest` y `success`, con retorno al prompt. La verificación de integridad informada por Ollama no acredita seguridad del modelo ni inferencia sin salida de red.
 
-Siguiente comprobación preparada: `ollama ls`, para registrar nombre, identificador y tamaño local. [Referencia oficial de CLI](https://docs.ollama.com/cli), consultada el 2026-10-18. Ejecución pendiente.
+Comprobación ejecutada: `ollama ls`. Resultado: nombre `qwen3:1.7b`, identificador `8f68893c685c` y tamaño 1,4 GB, coincidentes con el catálogo consultado. [Referencia oficial de CLI](https://docs.ollama.com/cli), consultada el 2026-10-18.
+
+Primera consulta sintética preparada, ejecución pendiente:
+
+```bash
+ollama run qwen3:1.7b "Responde en castellano: cuanto es dos mas dos?"
+```
+
+El objetivo de esta consulta es comprobar carga y respuesta del modelo. No acredita calidad para cursos ni ausencia de conexiones salientes. Ante fallo se conserva el mensaje y se revisa el estado del servicio antes de modificar límites.
