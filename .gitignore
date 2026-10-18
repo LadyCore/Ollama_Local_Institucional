@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.sql
+*.sql.gz
+*.log
+*.png
+*.jpg
+*.jpeg
+*.webp
+work/
+private/
+backups/
+models/
