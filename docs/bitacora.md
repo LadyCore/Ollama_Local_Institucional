@@ -250,6 +250,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** comprobar escucha con `ss -ltnp 'sport = :11434'`.
 - **Recuperación:** parada controlada mediante `systemctl stop ollama` ante anomalías.
 
+## 2026-10-18 — B027 — Escucha local comprobada
+
+- **Estado:** ejecutado; salida verificada.
+- **Acción y comandos:** `ss -ltnp 'sport = :11434'`.
+- **Evidencia:** socket TCP LISTEN en `127.0.0.1:11434`, asociado a Ollama; sin escucha en todas las interfaces en esta consulta.
+- **Incidencia:** filtro inicial sin dos puntos delante del puerto produjo error de análisis; consulta corregida satisfactoria.
+- **Resultado:** escucha loopback comprobada. No acredita bloqueo de conexiones salientes ni restricciones de otros intermediarios.
+- **Siguiente paso:** comprobar cuota CPU, memoria y usuario mediante propiedades de systemd.
+- **Recuperación:** no aplica; inspección de solo lectura.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

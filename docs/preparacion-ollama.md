@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: servicio iniciado y activo; modo sin nube confirmado en registros. Inspección completa de escucha y límites, selección de modelo e inferencia pendientes.
+Fecha: 2026-10-18. Estado: servicio activo, modo sin nube confirmado y escucha loopback verificada. Comprobación detallada de límites, selección de modelo e inferencia pendientes.
 
 ## Base del laboratorio
 
@@ -198,12 +198,24 @@ Durante la recarga apareció aviso de `/etc/rc.d/rc.local` sin permiso de ejecuc
 
 ### Comprobación de escucha
 
-Comando preparado, ejecución pendiente:
+Comando ejecutado; salida verificada:
 
 ```bash
 ss -ltnp 'sport = :11434'
 ```
 
 Criterio: dirección local `127.0.0.1:11434`, sin escucha en todas las interfaces. La comprobación de entrada no sustituye ensayo de conexiones salientes. CPUQuota y demás parámetros efectivos requieren inspección adicional.
+
+Resultado observado: socket TCP LISTEN en `127.0.0.1:11434`, asociado al proceso Ollama. La columna de destino remoto `0.0.0.0:*` no es una dirección local de escucha. Un intento previo omitió los dos puntos del puerto y fue rechazado por el filtro de `ss`; la consulta corregida se ejecutó correctamente.
+
+### Comprobación de parámetros de recursos
+
+Comando preparado, ejecución pendiente:
+
+```bash
+systemctl show ollama -p CPUQuotaPerSecUSec -p MemoryMax -p User
+```
+
+Valores esperados: cuota equivalente a 2 segundos de CPU por segundo, memoria 4294967296 bytes y usuario ollama. La lectura verifica parámetros de systemd; el comportamiento bajo carga requiere medición posterior.
 
 Pendientes de preparación: comprobación completa de red y recursos, selección de modelo y recuperación disponible. Servicio activo y modo sin nube no acreditan inferencia validada ni bloqueo efectivo de toda salida.
