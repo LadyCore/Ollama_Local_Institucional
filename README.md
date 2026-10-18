@@ -16,17 +16,11 @@ Estado inicial: proyecto documentado el 18 de octubre de 2026. Instalación de O
 
 ## Método
 
-El trabajo se realiza por etapas verificables. La ejecución en la VM corresponde a la administración del servidor. Cada etapa registra las acciones ejecutadas, la evidencia disponible, los resultados y los pendientes; los intentos fallidos se conservan para trazabilidad.
+La evaluación comprende instalación de Ollama, validación de procesamiento local y pruebas acotadas de integración con Moodle. Cada etapa registra configuración, evidencia, resultados y pendientes para permitir su reproducción.
 
-La bitácora, el estado y la matriz se actualizan con cada avance confirmado durante las sesiones de trabajo. La sincronización en GitHub incluye verificación de la revisión publicada. El registro no dispone de monitoreo automático de la VM. Las reglas de mantenimiento documental se encuentran en [AGENTS.md](AGENTS.md).
+## Datos de ensayo y privacidad
 
-La documentación conserva la cronología y expresa las decisiones y procedimientos del proyecto en forma impersonal. Se distinguen los acuerdos de laboratorio, las acciones verificadas y las autorizaciones institucionales pendientes.
-
-## Alcance y privacidad
-
-Evaluación en un clon de laboratorio con MySQL. Producción y el proyecto de actualización a Moodle 5.3 quedan fuera del alcance. No modificar Moodle, PHP, MySQL, pools ni configuraciones existentes salvo necesidad documentada y autorización específica. No crear cursos de prueba.
-
-El repositorio permanece privado y excluye credenciales, identificadores institucionales, nombres reales de máquinas, direcciones de red, rutas personales, datos de usuarios y capturas de plataformas reales. Los procedimientos utilizan datos sintéticos y parámetros sustituibles. La presentación a terceros requiere una decisión específica.
+Las pruebas utilizan datos sintéticos. La evidencia publicada se limita a resultados técnicos anonimizados y procedimientos con parámetros sustituibles, sin credenciales, identificadores institucionales ni datos de usuarios.
 
 ## Resultado esperado
 

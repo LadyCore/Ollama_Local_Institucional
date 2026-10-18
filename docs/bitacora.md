@@ -145,6 +145,12 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** cambio limitado al paquete Zstandard; estado anterior conservado en la bitácora. Clonación previa sin confirmación adicional.
 - **Siguiente paso:** descargar el archivo y verificar SHA-256 antes de instalar.
 
+## 2026-10-18 — B015 — Depuración del README
+
+- **Estado:** actualización documental, sin cambios en la VM.
+- **Acción:** retirar del README restricciones de actuación y mantenimiento del asistente; conservarlas en AGENTS.md.
+- **Resultado:** presentación del proyecto centrada en objetivo, documentación, método técnico y datos de ensayo. Sin modificación de resultados ni cronología previa.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
