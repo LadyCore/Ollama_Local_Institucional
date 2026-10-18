@@ -117,6 +117,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** sin cambios operativos; clonación previa todavía sin confirmación de finalización.
 - **Siguiente paso:** ejecutar la comprobación previa dentro de la VM y completar los parámetros de instalación.
 
+## 2026-10-18 — B012 — Comprobación previa de la VM
+
+- **Objetivo:** verificar herramientas de instalación y estado inicial del servicio y del puerto.
+- **Estado:** ejecutado en la VM; salida aportada y verificada.
+- **Acción y comandos:** `rpm -q curl tar zstd ca-certificates`, `command -v ollama`, `ss -ltn '( sport = :11434 )'`, `getenforce`.
+- **Evidencia:** curl, tar y certificados instalados; zstd no instalado; búsqueda del ejecutable sin salida; sin escucha TCP en 11434; SELinux Enforcing. Se conserva únicamente el resultado textual anonimizado.
+- **Resultado:** dependencia Zstandard pendiente. No se acredita instalación de Ollama ni finalización de clonación a partir de esta comprobación.
+- **Siguiente paso:** instalar zstd y verificar el paquete. Comandos documentados, sin ejecución acreditada todavía.
+- **Recuperación:** no aplica; comprobación de solo lectura.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

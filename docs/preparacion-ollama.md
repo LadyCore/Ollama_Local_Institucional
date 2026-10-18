@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: requisitos documentados; comprobaciones e instalación pendientes.
+Fecha: 2026-10-18. Estado: comprobación previa ejecutada y salida verificada; dependencia Zstandard e instalación de Ollama pendientes.
 
 ## Base del laboratorio
 
@@ -33,5 +33,26 @@ getenforce
 Interpretación: paquetes ausentes se registran para instalación; falta de salida de `command -v` indica que el ejecutable no está en el PATH, sin excluir otras instalaciones; el puerto requiere revisión si aparece ocupado. SELinux permanece habilitado según su estado inicial; cualquier impedimento se diagnostica sin deshabilitarlo como solución general.
 
 ## Cierre de preparación
+
+### Resultado de comprobación previa
+
+Salida aportada el 2026-10-18:
+
+- `curl`, `tar` y `ca-certificates`: instalados.
+- `zstd`: paquete no instalado.
+- `command -v ollama`: sin salida; ejecutable no encontrado en PATH.
+- Puerto TCP 11434: sin sockets de escucha en la consulta.
+- SELinux: `Enforcing`.
+
+### Preparación de la dependencia
+
+Paso pendiente, ejecutado como root dentro de la VM:
+
+```bash
+dnf install zstd
+rpm -q zstd
+```
+
+La transacción debe limitarse al paquete y sus dependencias necesarias; cualquier eliminación o cambio ajeno al objetivo requiere revisión antes de aceptar. La salida de instalación y consulta acredita el cierre de este paso. SELinux conserva el modo Enforcing.
 
 Evidencia requerida: recuperación disponible, herramientas presentes, ausencia de conflicto con servicio previo, versión y modelo seleccionados, configuración de servicio y recursos definida. La instalación aún no se considera ejecutada.

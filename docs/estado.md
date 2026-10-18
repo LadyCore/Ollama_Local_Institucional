@@ -24,7 +24,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 ## Situación
 
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
-- Preparación: [requisitos y comprobación previa](preparacion-ollama.md) documentados; ejecución pendiente. Versión, modelo y límites concretos aún sin seleccionar.
+- Preparación: [comprobación previa](preparacion-ollama.md) ejecutada y salida verificada. curl/tar/certificados presentes; zstd ausente; ejecutable Ollama sin localizar en PATH; puerto 11434 sin escucha; SELinux Enforcing. Instalación de zstd, versión de Ollama, modelo y límites concretos pendientes.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
