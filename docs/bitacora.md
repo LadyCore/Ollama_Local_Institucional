@@ -151,6 +151,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Acción:** retirar del README restricciones de actuación y mantenimiento del asistente; conservarlas en AGENTS.md.
 - **Resultado:** presentación del proyecto centrada en objetivo, documentación, método técnico y datos de ensayo. Sin modificación de resultados ni cronología previa.
 
+## 2026-10-18 — B016 — Descarga e integridad de Ollama verificadas
+
+- **Objetivo:** obtener y verificar el paquete oficial versionado antes de instalar.
+- **Estado:** descarga ejecutada; SHA-256 verificado mediante salida aportada.
+- **Acción y comandos:** descarga con `curl -fL --retry 3` del artefacto oficial v0.40.6 y consulta `sha256sum /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst`.
+- **Evidencia:** SHA-256 `c164ab8b1b28e2a247c29719b8e404c423c5b83ae64c3ab4e59d50c7ff7fc5e0`, coincidente con el digest oficial registrado.
+- **Incidencias y recuperación:** intentos con errores de transcripción de URL produjeron HTTP 404; uso de `-fl` produjo archivo vacío. Corregidos URL y opción `-fL`; descarga final completa sustituyó el archivo vacío.
+- **Resultado:** paquete verificado disponible. Extracción y arranque no ejecutados todavía.
+- **Siguiente paso:** extracción manual en `/usr`, seguida de preparación del servicio local.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

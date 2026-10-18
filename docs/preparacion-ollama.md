@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: comprobación previa y dependencia Zstandard verificadas; descarga e instalación de Ollama pendientes.
+Fecha: 2026-10-18. Estado: comprobación previa, dependencia Zstandard y descarga con SHA-256 verificadas; extracción y configuración del servicio pendientes.
 
 ## Base del laboratorio
 
@@ -69,7 +69,7 @@ Fuente: [release oficial v0.40.6](https://github.com/ollama/ollama/releases/tag/
 
 Método de preparación: descarga del archivo versionado, comprobación de hash y posterior extracción manual. La descarga no ejecuta el instalador ni inicia el servicio. La identificación de release no constituye auditoría completa de seguridad.
 
-Comandos preparados, ejecución pendiente:
+Comandos ejecutados y salida de descarga y SHA-256 verificada:
 
 ```bash
 curl -fL --retry 3 -o /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst https://github.com/ollama/ollama/releases/download/v0.40.6/ollama-linux-amd64.tar.zst
@@ -77,5 +77,17 @@ sha256sum /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst
 ```
 
 El hash debe coincidir con el digest publicado antes de extraer o ejecutar. La extracción, el usuario, el servicio y sus restricciones corresponden al paso posterior. El archivo temporal de preparación se incluye en el inventario de almacenamiento y limpieza.
+
+Resultado: descarga finalizada y SHA-256 `c164ab8b1b28e2a247c29719b8e404c423c5b83ae64c3ab4e59d50c7ff7fc5e0`, coincidente con el digest publicado. Los intentos anteriores incluyeron errores de transcripción en URL (HTTP 404) y una descarga vacía por uso de `-fl` en lugar de `-fL`; la descarga correcta reemplazó ese archivo.
+
+### Extracción del paquete verificado
+
+Paso pendiente como root, según el método manual de la guía Linux oficial:
+
+```bash
+tar --zstd -xf /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst -C /usr
+```
+
+Este paso coloca los archivos del paquete en `/usr`; no crea ni inicia por sí mismo el servicio systemd. Su ejecución satisfactoria debe confirmarse antes de preparar el usuario y la configuración del servicio.
 
 Evidencia requerida: recuperación disponible, herramientas presentes, ausencia de conflicto con servicio previo, versión y modelo seleccionados, configuración de servicio y recursos definida. La instalación aún no se considera ejecutada.
