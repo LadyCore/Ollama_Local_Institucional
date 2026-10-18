@@ -4,7 +4,7 @@ Fecha: 2026-10-18. Código consultado: etiqueta v1.0.9, build 2026040106. Revisi
 
 ## Resultado
 
-No se recomienda esta versión sin modificaciones para la primera prueba de consulta de materiales restringida a un curso. La capacidad anunciada no coincide con el recorrido Ollama observado y falta delimitación de búsqueda por curso/usuario. No se propone desarrollar un fork como parte de este pequeño proyecto.
+Esta versión queda excluida de la primera prueba de consulta de materiales restringida a un curso. Fundamento: la capacidad anunciada no coincide con el recorrido Ollama observado y falta delimitación de búsqueda por curso/usuario. El desarrollo de un fork queda fuera del alcance.
 
 ## Procesamiento local
 
@@ -33,6 +33,6 @@ Fuentes: [esquema](https://github.com/khairu-aqsara/moodle-blocks_terusrag/blob/
 
 ## Decisión de alcance
 
-La primera entrega permanece limitada a procesamiento local sin conexiones externas y una consulta pequeña de material de curso con permisos comprobables. Los demás plugins son referencias futuras, no un plan inmediato. Separar la validación de Ollama de la elección del bloque; este hallazgo no invalida Ollama ni obliga a ampliar el proyecto.
+La primera entrega comprende procesamiento local sin conexiones externas y una consulta acotada de material de curso con permisos comprobables. La validación de Ollama precede al ensayo del plugin seleccionado. Los demás plugins son antecedentes sin ejecución programada.
 
-La revisión corrige la recomendación preliminar de Terus RAG como candidato directo: la ficha comercial bastaba para identificarlo, no para acreditar aislamiento ni funcionalidades de su proveedor Ollama. Referencia general: [catálogo y versiones](https://marketplace.moodle.com/plugins/3202/versions?show=all).
+Antecedente de selección: Terus RAG se identificó inicialmente por su ficha del catálogo; la revisión de código determinó su exclusión de la primera prueba por los hallazgos registrados. Referencia general: [catálogo y versiones](https://marketplace.moodle.com/plugins/3202/versions?show=all).

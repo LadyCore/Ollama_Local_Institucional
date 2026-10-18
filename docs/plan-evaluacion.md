@@ -1,6 +1,18 @@
-# Plan de evaluación técnica
+# Protocolo de evaluación técnica
 
-Estado: propuesto. Ningún control de esta lista se considera aplicado por estar documentado.
+Estado: secuencia de laboratorio definida; ejecución pendiente. La inclusión de un control en el protocolo no acredita su implementación ni su resultado.
+
+## Secuencia de trabajo
+
+1. Preparación de recuperación del entorno.
+2. Instalación y prueba independiente de Ollama local con un modelo adecuado a los recursos disponibles.
+3. Verificación de operación sin conexiones externas, persistencia y consumo.
+4. Revisión final del paquete e integración de MooChat con Moodle 4.5.8 y Ollama.
+5. Prueba acotada de consulta de materiales y consolidación de evidencia técnica.
+
+La versión de Ollama, el modelo y los valores de los límites de recursos permanecen pendientes de definición. Los demás plugins documentados no forman parte de esta secuencia.
+
+## Controles y evidencia
 
 | Etapa | Acción prevista | Evidencia para cerrar |
 |---|---|---|
@@ -13,7 +25,7 @@ Estado: propuesto. Ningún control de esta lista se considera aplicado por estar
 | Recursos | Evaluar límites CPU/RAM, concurrencia, contexto, tiempos y almacenamiento | Medidas con carga acotada y convivencia Moodle/MySQL |
 | Datos | Evaluar logs, retención, permisos, eliminación y funciones que contacten servicios externos | Configuración y comprobación con datos sintéticos |
 | Modelos | Revisar procedencia, licencia, tamaño y capacidad del modelo elegido | Identificador/versionado y condiciones de uso verificadas |
-| Plugins | Revisar compatibilidad declarada, datos enviados, permisos y dependencias | Matriz documentada y ensayo explícitamente autorizado |
+| MooChat | Revisar compatibilidad declarada, datos enviados, permisos y dependencias | Paquete identificado y ensayo sobre Moodle 4.5.8 con resultados registrados |
 | Operación | Definir actualización, parada, diagnóstico, desinstalación y recuperación | Procedimiento con controles y resultados reproducibles |
 | Presentación | Consolidar capacidades, restricciones, costos de recursos y pendientes | Propuesta técnica basada en evidencia, pendiente de aprobación institucional |
 
@@ -25,4 +37,4 @@ Ante falta de memoria, degradación de Moodle/MySQL, exposición inesperada o en
 
 ## Fuentes
 
-La revisión inicial oficial se registra en [seguridad y confidencialidad](seguridad-confidencialidad.md), con fecha, enlaces y distinción entre hechos documentados y controles propuestos. La selección de versiones, modelos y plugins continúa pendiente.
+Los fundamentos se registran en [seguridad y confidencialidad](seguridad-confidencialidad.md), con fecha, enlaces y estado de validación de los controles. MooChat es el candidato priorizado. La selección de versión de Ollama y modelo continúa pendiente.

@@ -1,6 +1,6 @@
 # MooChat: revisión inicial dirigida
 
-Fecha: 2026-10-18. Estado: código inspeccionado parcialmente; instalación y ensayo pendientes. Candidato principal para una prueba pequeña de consulta de material, según preferencia confirmada. No constituye aprobación para producción.
+Fecha: 2026-10-18. Estado: código inspeccionado parcialmente; instalación y ensayo pendientes. Candidato priorizado para consulta acotada de material de curso. Aprobación para producción pendiente.
 
 ## Identificación reproducible
 
@@ -24,14 +24,14 @@ Código: [envío](https://github.com/bapool/moodle-mod_moochat/blob/01ac171790fa
 
 ## Configuración de referencia para el primer ensayo
 
-Propuesta pendiente: proveedor dirigido únicamente a Ollama local; actividad sin calificación ni objetivos de evaluación; un texto sintético corto cargado expresamente; incorporación automática de sección desactivada; límite horario de consultas. Probar extracción fallida, pregunta fuera del material, acceso sin permiso y contenido demasiado largo. Verificar salida de red y persistencia en Moodle, proveedor, temporales y copias.
+El recorrido definido para el laboratorio es Moodle → Ollama local. La primera prueba se limita a consulta de material con datos sintéticos. Permanecen pendientes de definición los parámetros de la actividad: calificación, objetivos, selección de archivos, incorporación de sección y límite horario. Los casos de validación comprenden extracción fallida, pregunta fuera del material, acceso sin permiso y contenido demasiado largo, junto con salida de red y persistencia en Moodle, servicio de inferencia, temporales y copias.
 
-El modo de sección puede incorporar más contenido que los archivos elegidos y tiene otras rutas de extracción; queda fuera de esta primera configuración. La lectura completa de documentos en cada envío puede afectar memoria y longitud de contexto: no se promete capacidad sobre la VM sin medir.
+El modo de sección puede incorporar más contenido que los archivos elegidos y tiene otras rutas de extracción; su habilitación requiere una decisión de configuración específica. La lectura completa de documentos en cada envío puede afectar memoria y longitud de contexto. La capacidad de la VM queda pendiente de medición.
 
-## Comparación solicitada: Asyntai
+## Alternativa evaluada: Asyntai
 
 La [ficha 3401](https://marketplace.moodle.com/plugins/3401) identifica `local_asyntai`, Asyntai AI Chatbot for Moodle. Describe vinculación de cuenta con Asyntai, administración en su dashboard y activación automática en todas las páginas. No documenta conexión a Ollama autoalojado. Su soporte declarado incluye 4.5, pero la información consultada no acredita el recorrido local requerido. No se selecciona para la primera prueba; no se auditó su código.
 
 ## Límite y siguiente paso
 
-Revisión estática parcial, sin ejecutar código de terceros ni modificar la VM. Falta revisar el paquete íntegro y su integración efectiva con Moodle 4.5.8. Mantener Ollama local como siguiente validación operativa, antes de ensayar el plugin. No ampliar a desarrollo de un fork ni a pruebas simultáneas de otros candidatos.
+Revisión estática parcial, sin ejecución del código ni cambios en la VM. La revisión del paquete íntegro y la integración efectiva con Moodle 4.5.8 permanecen pendientes. La secuencia establece la validación independiente de Ollama local antes del ensayo del plugin. El desarrollo de un fork y las pruebas simultáneas de otros candidatos quedan fuera del alcance.

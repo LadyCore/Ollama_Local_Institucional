@@ -1,8 +1,8 @@
 # Seguridad y confidencialidad: revisión inicial
 
-Fecha de consulta: 2026-10-18. Alcance: documentación oficial vigente consultada, no auditoría del código ni certificación de cumplimiento. Versión instalada: ninguna. Los controles siguientes son propuestas pendientes de implementación y ensayo.
+Fecha de consulta: 2026-10-18. Alcance: fundamentos documentales y requisitos de validación de seguridad del laboratorio. Versión instalada: ninguna. Implementación y ensayo de controles pendientes. La revisión documental no acredita certificación de cumplimiento.
 
-## Conclusión técnica
+## Fundamento de la arquitectura
 
 Ollama permite plantear procesamiento local bajo control institucional. La confidencialidad debe demostrarse sobre el conjunto: aplicación cliente, plugin, servicio de inferencia, sistema operativo, hipervisor, almacenamiento y red. Instalarlo localmente no acredita por sí solo aislamiento ni aptitud para datos sensibles.
 
@@ -15,11 +15,11 @@ Ollama permite plantear procesamiento local bajo control institucional. La confi
 - **Herramientas:** la aplicación que integra el modelo ejecuta las funciones solicitadas. Esa capacidad exige revisar los permisos y efectos del integrador. [Tool calling](https://docs.ollama.com/capabilities/tool-calling).
 - **Mantenimiento:** el proyecto recomienda actualizar, proteger las instancias y monitorear actividad; dispone de un canal de reporte privado de vulnerabilidades. [Seguridad del proyecto](https://github.com/ollama/ollama/security).
 
-## Controles propuestos y pruebas de aceptación
+## Controles y pruebas de aceptación
 
-Estas medidas son recomendaciones del proyecto, no garantías atribuidas al proveedor.
+Estos controles establecen los criterios de validación del laboratorio. Su cumplimiento requiere evidencia de ejecución. Los parámetros de configuración y las medidas condicionadas a acceso remoto o uso institucional permanecen pendientes de definición.
 
-| Área | Control propuesto | Evidencia requerida |
+| Área | Criterio de validación | Evidencia requerida |
 |---|---|---|
 | Salida de datos | Modo local y política de salida restringida al proceso/servicio; separar descarga autorizada de operación | Inferencia sintética con salida bloqueada y observación de conexiones/DNS durante arranque, ejecución y errores; ensayo cloud rechazado |
 | Exposición | Escucha solo en loopback durante la primera etapa; revisar también redirecciones y proxies | Socket efectivo y prueba desde otro equipo sin acceso directo |
@@ -42,12 +42,12 @@ Determinar qué información construye y envía, desde dónde llama, si tiene pr
 
 Si incorpora herramientas, navegación o ejecución, evaluar instrucciones maliciosas en entradas/documentos y no otorgar acciones privilegiadas por la respuesta del modelo. Las salidas deben tratarse como contenido no confiable antes de renderizarlas o usarlas para acciones. Un prompt que diga «no revelar» no sustituye controles de acceso.
 
-No se ha revisado aún ningún plugin concreto ni se afirma compatibilidad o aislamiento entre usuarios.
+Las revisiones parciales de [MooChat](revision-moochat.md) y [Terus RAG](revision-terusrag.md) registran hallazgos específicos. El aislamiento entre usuarios y la compatibilidad efectiva permanecen pendientes de ensayo.
 
 ## Límites para la presentación institucional
 
-La afirmación defendible hoy es que existe una arquitectura local evaluable, con controles pendientes de ensayo. No afirmar «seguridad total», «sin rastros», «ningún dato sale», «cumple todas las políticas» ni «apto para información clasificada».
+Estado acreditado: arquitectura local evaluable, con controles pendientes de ensayo. No se dispone de evidencia de aislamiento efectivo ni de aptitud para datos sensibles o clasificados. Toda declaración de cumplimiento requiere correspondencia con requisitos institucionales y pruebas registradas.
 
 DIRINFO deberá determinar categorías de datos permitidas, responsables, accesos, retención, requisitos de cifrado, respuesta a incidentes y aceptación de riesgos. Esta revisión no sustituye esas políticas internas, que no se han aportado, ni acredita certificaciones, acuerdos de tratamiento o niveles de servicio.
 
-Para la primera prueba se propone texto sintético, sin cuenta cloud ni integraciones externas, y documentar tanto controles satisfactorios como limitaciones. La aprobación para datos reales es una decisión posterior.
+La primera prueba utiliza texto sintético, sin cuenta cloud ni integraciones externas. El registro incluye resultados satisfactorios, fallos y limitaciones. La aprobación para datos reales corresponde a una etapa institucional posterior.

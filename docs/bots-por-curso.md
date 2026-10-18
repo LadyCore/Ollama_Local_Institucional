@@ -1,6 +1,6 @@
 # Bots por curso con Ollama: selección documental
 
-Consulta: 2026-10-18. Objetivo: localizar opciones, no decidir instalación ni uso académico. Ningún candidato probado en Moodle 4.5.8. El almacenamiento en Moodle o la existencia de otros proveedores configurables no son motivos de descarte: importa el recorrido elegido y sus dependencias efectivas.
+Consulta: 2026-10-18. Registro de alternativas para consulta de materiales por curso con Ollama local. MooChat es el candidato priorizado para el laboratorio; los demás componentes permanecen como antecedentes. Ningún candidato probado en Moodle 4.5.8. La selección considera el recorrido de datos y sus dependencias efectivas; el almacenamiento en Moodle y los servicios externos opcionales no determinan por sí solos la exclusión.
 
 ## Opciones
 
@@ -18,12 +18,12 @@ Fuentes primarias:
 - [AI Chat: documentación del autor](https://github.com/bycs-lp/moodle-block_ai_chat).
 - [AI Manager: proveedores y requisitos](https://github.com/bycs-lp/moodle-local_ai_manager).
 
-## Interpretación para la prueba pequeña
+## Decisión de evaluación y fundamentos
 
-Preferencia confirmada: priorizar MooChat. Asyntai (`local_asyntai`, ficha 3401) documenta conexión a su servicio y bot global; no acredita Ollama local. Detalle en la [revisión dirigida](revision-moochat.md).
+MooChat queda priorizado por su configuración por actividad, incorporación de material y conexión al subsistema IA de Moodle. Asyntai (`local_asyntai`, ficha 3401) documenta conexión a su servicio y bot global; no acredita Ollama local. Detalle en la [revisión dirigida](revision-moochat.md).
 
-MooChat es un candidato documental especialmente cercano a chat con material proporcionado por el docente, sin que eso constituya aprobación de seguridad. La ficha presenta funciones de calificación e historial; la calificación queda fuera del alcance. Su restricción verbal a documentos no debe presentarse como una garantía técnica contra respuestas ajenas al material.
+El alcance de MooChat comprende consulta de material proporcionado por el docente. La calificación queda fuera de la primera evaluación. La restricción a documentos utiliza instrucciones al modelo y no acredita una garantía técnica contra respuestas ajenas al material. La aprobación de seguridad permanece pendiente de validación.
 
 Exabis permite estudiar el concepto de bot configurado por curso con Ollama para conversación y contexto. La disponibilidad del proveedor local no garantiza que la función de archivos use ese mismo proveedor.
 
-No se declara ausencia total de conexiones externas para ninguna instalación sin revisar paquete y configuración y ensayar la salida de red. No se instalará un conjunto de plugins por el solo hecho de aparecer aquí. Los demás quedan como referencias futuras.
+La validación del recorrido local requiere revisión del paquete y configuración, y ensayo de salida de red. La primera evaluación se limita a MooChat, después de validar Ollama; los demás componentes carecen de ejecución programada.

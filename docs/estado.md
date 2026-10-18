@@ -25,19 +25,21 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
-- Restricciones y límites: propuesta inicial en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
+- Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
-## Alcance inmediato corregido
+## Alcance de la primera prueba
 
 Primera prueba pequeña y progresiva: validar Ollama local sin conexiones externas y evaluar una consulta acotada de material de curso. No habilitar múltiples funciones ni decidir usos académicos. Los demás candidatos quedan como referencias futuras. Terus RAG v1.0.9 no supera la revisión dirigida para ese objetivo: ver [hallazgos](revision-terusrag.md). No se instala ni se desarrolla un fork en este paso.
 
-## Secuencia de referencia, no compromiso de ejecución inmediata
+## Secuencia de trabajo definida
 
-1. Revisión inicial oficial de Linux, privacidad, autenticación y seguridad realizada; seleccionar versión y revisar sus avisos antes de instalar.
-2. Preparar instalación y recuperación, decidir ubicación de modelos y límites considerando la convivencia con Moodle/MySQL.
-3. Instalar y comprobar localmente con un modelo adecuado al laboratorio y datos sintéticos.
-4. Evaluar restricciones y consumo; registrar fallos y límites.
-5. Recuperar/verificar versiones exactas de Moodle/PHP/MySQL cuando sean necesarias para compatibilidad y estudiar candidatos.
-6. Preparar procedimiento y propuesta técnica para DIRINFO basados en resultados.
+1. Preparación de recuperación antes de instalar; clonación anunciada, finalización pendiente de confirmación.
+2. Definición de versión de Ollama, modelo, almacenamiento y límites para convivencia con Moodle/MySQL.
+3. Instalación y comprobación de inferencia local con datos sintéticos.
+4. Validación de restricciones de red, persistencia y consumo.
+5. Comprobación de versiones efectivas del entorno, revisión final de MooChat e integración acotada.
+6. Consolidación de resultados para la propuesta técnica ante DIRINFO.
+
+El ensayo de migración de MySQL a MariaDB previsto en otro clon constituye trabajo independiente. No se registra una migración ejecutada ni se modifica el inventario confirmado de este laboratorio.

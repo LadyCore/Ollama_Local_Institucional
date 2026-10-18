@@ -77,6 +77,17 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no aplica a servicios; cambios documentales trazables.
 - **Siguiente paso:** validar Ollama local y completar revisión del paquete antes de ensayar integración en 4.5.8.
 
+## 2026-10-18 — B008 — Normalización editorial y consolidación del protocolo
+
+- **Objetivo:** expresar la documentación como registro técnico de decisiones, fundamentos, procedimientos y pendientes del proyecto.
+- **Estado:** documentación actualizada; sin cambios en servicios.
+- **Acción:** revisar README, estado, protocolo, matriz, controles y revisiones de candidatos; actualizar las reglas de mantenimiento documental.
+- **Resultado:** se conserva la cronología. Se elimina el tratamiento de informe del asistente hacia la administración y se reemplaza la secuencia exploratoria desactualizada por la definida: recuperación, Ollama local, validación de controles e integración acotada con MooChat.
+- **Trazabilidad:** las entradas históricas conservan las propuestas registradas en su fecha. El protocolo vigente las reemplaza cuando existe una decisión posterior. Las opciones de configuración no acordadas permanecen pendientes de definición; la decisión de laboratorio no acredita ejecución ni aprobación institucional.
+- **Situación operativa:** clonación previa anunciada, sin confirmación de finalización. La migración MySQL/MariaDB prevista para otro clon es independiente del ensayo de IA.
+- **Recuperación:** revisión documental anterior conservada en el historial del repositorio.
+- **Siguiente paso:** completar la preparación del entorno y definir los parámetros de instalación de Ollama.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
