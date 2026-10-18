@@ -222,6 +222,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Evidencia:** [configuración y explicación técnica](preparacion-ollama.md). Sin captura original en el repositorio.
 - **Siguiente paso:** corregir la directiva, guardar y validar la unidad antes de iniciar.
 
+## 2026-10-18 — B024 — Unidad de servicio guardada
+
+- **Estado:** corrección y guardado ejecutados; validación pendiente.
+- **Acción:** corregir las cuatro directivas a `Environment` y guardar `/etc/systemd/system/ollama.service`.
+- **Evidencia:** editor informa 20 líneas y 321 bytes escritos, con retorno al prompt. Revisión visual previa del contenido corregido.
+- **Resultado:** archivo guardado; no se acredita servicio iniciado ni parámetros aplicados.
+- **Pendiente de ensayo:** consultas en cola y tiempos de espera de Moodle con paralelismo inicial de una solicitud.
+- **Siguiente paso:** `systemd-analyze verify /etc/systemd/system/ollama.service`, antes de recarga y arranque.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

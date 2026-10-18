@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; configuración del servicio pendiente.
+Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; unidad systemd guardada, pendiente de validación y arranque.
 
 ## Base del laboratorio
 
@@ -168,6 +168,16 @@ La configuración de variables sigue la [FAQ oficial](https://docs.ollama.com/fa
 
 Fuentes de semántica systemd: [servicios](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html) y [control de recursos](https://www.freedesktop.org/software/systemd/man/latest/systemd.resource-control.html). Los valores 4 GiB y 200% son parámetros iniciales del ensayo; no requisitos mínimos oficiales de Ollama.
 
-Revisión visual del archivo en edición: las cuatro directivas de variables aparecen como `Enviroment`; corrección requerida a `Environment` antes de guardar y validar. Las demás líneas visibles coinciden con la unidad preparada. No se acredita guardado ni aplicación de la configuración a partir de esta revisión.
+Revisión visual: corregidas las cuatro directivas a `Environment`; las demás líneas visibles coinciden con la unidad preparada. Guardado confirmado por el editor: `/etc/systemd/system/ollama.service`, 20 líneas, 321 bytes, retorno al prompt. La validación de systemd y la aplicación efectiva permanecen pendientes.
 
-Pendientes de preparación: servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.
+### Validación previa al arranque
+
+Comando preparado, ejecución pendiente:
+
+```bash
+systemd-analyze verify /etc/systemd/system/ollama.service
+```
+
+La salida debe revisarse antes de recargar systemd e iniciar. Esta validación no ejecuta inferencia ni acredita aislamiento de red. Queda registrado para ensayo posterior el comportamiento de consultas en cola, concurrencia y tiempos de espera de Moodle con `OLLAMA_NUM_PARALLEL=1`.
+
+Pendientes de preparación: validación y arranque del servicio, comprobación efectiva de red y recursos, selección de modelo y recuperación disponible. La unidad guardada no acredita servicio operativo ni inferencia validada.
