@@ -23,9 +23,9 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 ## Situación
 
-- Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
+- Ollama: paquete v0.40.6 extraído en `/usr`, sin errores visibles. Versión del ejecutable pendiente de comprobación; servicio y modelo sin configurar; sin prueba de funcionamiento.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).
-- Preparación: [comprobación previa, dependencia y descarga](preparacion-ollama.md) verificadas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 descargado con SHA-256 coincidente. Extracción, configuración de servicio, modelo y límites concretos pendientes. SELinux Enforcing en la comprobación inicial.
+- Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Configuración de servicio, modelo y límites concretos pendientes. SELinux Enforcing en la comprobación inicial.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).

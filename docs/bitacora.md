@@ -161,6 +161,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Resultado:** paquete verificado disponible. Extracción y arranque no ejecutados todavía.
 - **Siguiente paso:** extracción manual en `/usr`, seguida de preparación del servicio local.
 
+## 2026-10-18 — B017 — Extracción del paquete Ollama
+
+- **Objetivo:** incorporar los archivos del paquete verificado al sistema de laboratorio.
+- **Estado:** extracción ejecutada; retorno al prompt sin errores visibles en la salida aportada.
+- **Acción y comandos:** `tar --zstd -xf /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst -C /usr`.
+- **Incidencia:** primer intento con extensión incompleta `.tar`; archivo no encontrado. Corregido a `.tar.zst` en la ejecución posterior.
+- **Resultado:** extracción finalizada. Servicio sin configurar y sin inferencia probada.
+- **Siguiente paso:** comprobar `/usr/bin/ollama --version` y preparar el usuario y servicio local.
+- **Recuperación:** inventario y retirada de archivos incorporados pendientes de completar; no se ejecutaron eliminaciones.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

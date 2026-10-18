@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: comprobación previa, dependencia Zstandard y descarga con SHA-256 verificadas; extracción y configuración del servicio pendientes.
+Fecha: 2026-10-18. Estado: comprobación previa, dependencia, descarga y extracción completadas; comprobación del ejecutable y configuración del servicio pendientes.
 
 ## Base del laboratorio
 
@@ -82,12 +82,20 @@ Resultado: descarga finalizada y SHA-256 `c164ab8b1b28e2a247c29719b8e404c423c5b8
 
 ### Extracción del paquete verificado
 
-Paso pendiente como root, según el método manual de la guía Linux oficial:
+Paso ejecutado como root, según el método manual de la guía Linux oficial:
 
 ```bash
 tar --zstd -xf /var/tmp/ollama-linux-amd64-v0.40.6.tar.zst -C /usr
 ```
 
-Este paso coloca los archivos del paquete en `/usr`; no crea ni inicia por sí mismo el servicio systemd. Su ejecución satisfactoria debe confirmarse antes de preparar el usuario y la configuración del servicio.
+Resultado observado: retorno al prompt sin mensajes de error. El primer intento omitió `.zst` en el nombre y terminó sin encontrar el archivo; el segundo utilizó el nombre completo y finalizó sin errores visibles. Este paso coloca los archivos del paquete en `/usr`; no crea ni inicia por sí mismo el servicio systemd.
 
-Evidencia requerida: recuperación disponible, herramientas presentes, ausencia de conflicto con servicio previo, versión y modelo seleccionados, configuración de servicio y recursos definida. La instalación aún no se considera ejecutada.
+Comprobación del ejecutable pendiente:
+
+```bash
+/usr/bin/ollama --version
+```
+
+Al no estar iniciado el servicio, puede aparecer una advertencia de conexión junto con la versión del cliente. Esta consulta no acredita funcionamiento de inferencia.
+
+Pendientes de preparación: comprobación del ejecutable, usuario de servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La extracción no acredita servicio operativo ni inferencia validada.
