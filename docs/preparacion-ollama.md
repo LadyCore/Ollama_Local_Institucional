@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: cliente verificado y cuenta dedicada creada; corrección del shell ejecutada sin advertencias, comprobación del registro y configuración del servicio pendientes.
+Fecha: 2026-10-18. Estado: cliente y cuenta dedicada verificados; configuración del servicio pendiente.
 
 ## Base del laboratorio
 
@@ -100,7 +100,7 @@ Resultado observado: `Warning: could not connect to a running Ollama instance` y
 
 ### Usuario del servicio
 
-Cuenta y grupo creados como root; `id ollama` confirma uid 995, gid 994 y pertenencia al grupo propio. Se observó advertencia por ruta de shell mal transcrita; el shell sin inicio de sesión interactivo requiere corrección.
+Cuenta y grupo creados como root; `id ollama` confirma uid 995, gid 994 y pertenencia al grupo propio. La advertencia inicial por ruta de shell mal transcrita se resolvió mediante modificación de la cuenta existente.
 
 ```bash
 useradd -r -U -m -d /usr/share/ollama -s /sbin/nologin ollama
@@ -109,7 +109,7 @@ id ollama
 
 Si la cuenta ya existe, su configuración requiere comprobación antes de continuar; no se elimina ni reemplaza automáticamente. El servicio se configurará para ejecutarse con esta cuenta, sin privilegios de root.
 
-Corrección ejecutada sobre la cuenta existente; comprobación con `getent` pendiente:
+Corrección y comprobación ejecutadas sobre la cuenta existente:
 
 ```bash
 usermod -s /sbin/nologin ollama
@@ -118,6 +118,10 @@ getent passwd ollama
 
 La última columna debe ser `/sbin/nologin`. Esta corrección no requiere recrear la cuenta ni cambiar su uid/gid.
 
-Resultado observado: un intento intermedio utilizó una barra final en la ruta y produjo advertencia. El comando final `usermod -s /sbin/nologin ollama` regresó al prompt sin mensajes; lectura del registro de cuenta pendiente.
+Resultado observado: un intento intermedio utilizó una barra final en la ruta y produjo advertencia. El comando final `usermod -s /sbin/nologin ollama` regresó al prompt sin mensajes. La consulta `getent passwd ollama` confirmó `ollama:x:995:994::/usr/share/ollama:/sbin/nologin`.
 
-Pendientes de preparación: lectura del registro de cuenta, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.
+### Preparación del servicio
+
+Archivo previsto: `/etc/systemd/system/ollama.service`, con ejecución mediante `/usr/bin/ollama serve` bajo la cuenta dedicada. La configuración incorporará escucha local y nube deshabilitada antes del primer arranque controlado. Creación y contenido del archivo pendientes de ejecución.
+
+Pendientes de preparación: servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.

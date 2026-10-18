@@ -196,6 +196,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Resultado:** retorno al prompt sin mensajes de error; no se recreó la cuenta.
 - **Siguiente paso:** `getent passwd ollama` para comprobar los campos antes de configurar el servicio.
 
+## 2026-10-18 — B021 — Registro de cuenta verificado
+
+- **Estado:** ejecutado en la VM; salida verificada.
+- **Acción y comandos:** `getent passwd ollama`.
+- **Evidencia:** cuenta ollama, uid 995, gid 994, directorio `/usr/share/ollama` y shell `/sbin/nologin`.
+- **Resultado:** corrección del shell comprobada; cuenta dedicada preparada para el servicio.
+- **Siguiente paso:** crear y configurar `/etc/systemd/system/ollama.service` antes de iniciar Ollama.
+- **Recuperación:** no aplica; consulta de solo lectura.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
