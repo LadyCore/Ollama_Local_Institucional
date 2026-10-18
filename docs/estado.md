@@ -26,7 +26,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: propuesta inicial en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Plugins: cuatro candidatos externos y una vía incluida documentados para la rama 4.5 en [compatibilidad](compatibilidad-moodle.md); objetivo solicitado 4.5.8. Ninguno ensayado ni habilitado.
+- Plugins: investigación acotada a [bots por curso](bots-por-curso.md); MooChat y Exabis con soporte documental de 4.5/Ollama, AI Chat con conjunto de versiones pendiente. Ninguno ensayado ni habilitado; objetivo 4.5.8.
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
 ## Alcance inmediato corregido

@@ -57,6 +57,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Alcance confirmado:** avance pequeño, progresivo y documentado; otros plugins son posibilidades futuras. Las decisiones académicas y de adopción corresponden a las áreas responsables.
 - **Recuperación:** no aplica a la VM; no hubo cambios.
 
+## 2026-10-18 — B006 — Búsqueda acotada de bots por curso
+
+- **Objetivo:** identificar bots configurables por curso con conexión documentada a Ollama local.
+- **Estado:** revisión documental, sin instalación.
+- **Resultado:** [lista corta](bots-por-curso.md) con MooChat, Exabis y alternativa AI Chat/AI Manager. Diferenciar conversación, contexto y consulta de documentos; no atribuir RAG local a partir del solo soporte de Ollama.
+- **Decisión:** no descartar por almacenar datos en Moodle ni por admitir proveedores externos opcionales. No aprobar una cadena local completa sin verificación. Mantener alcance progresivo.
+- **Límites:** no se recuperó la página de versiones de MooChat; paquete exacto pendiente. No se confirmó la herramienta de una institución de referencia ni se guardan datos de personas.
+- **Recuperación:** no aplica a servicios; solo documentación.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
