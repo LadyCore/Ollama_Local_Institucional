@@ -1,6 +1,6 @@
 # Preparación de instalación de Ollama
 
-Fecha: 2026-10-18. Estado: cliente verificado y cuenta dedicada creada; corrección del shell y configuración del servicio pendientes.
+Fecha: 2026-10-18. Estado: cliente verificado y cuenta dedicada creada; corrección del shell ejecutada sin advertencias, comprobación del registro y configuración del servicio pendientes.
 
 ## Base del laboratorio
 
@@ -109,7 +109,7 @@ id ollama
 
 Si la cuenta ya existe, su configuración requiere comprobación antes de continuar; no se elimina ni reemplaza automáticamente. El servicio se configurará para ejecutarse con esta cuenta, sin privilegios de root.
 
-Corrección pendiente de la cuenta existente:
+Corrección ejecutada sobre la cuenta existente; comprobación con `getent` pendiente:
 
 ```bash
 usermod -s /sbin/nologin ollama
@@ -118,4 +118,6 @@ getent passwd ollama
 
 La última columna debe ser `/sbin/nologin`. Esta corrección no requiere recrear la cuenta ni cambiar su uid/gid.
 
-Pendientes de preparación: corrección del shell de la cuenta, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.
+Resultado observado: un intento intermedio utilizó una barra final en la ruta y produjo advertencia. El comando final `usermod -s /sbin/nologin ollama` regresó al prompt sin mensajes; lectura del registro de cuenta pendiente.
+
+Pendientes de preparación: lectura del registro de cuenta, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.

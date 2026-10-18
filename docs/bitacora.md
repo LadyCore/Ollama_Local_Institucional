@@ -188,6 +188,14 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Resultado:** cuenta existente; no requiere recreación. Servicio todavía sin configurar.
 - **Recuperación y siguiente paso:** corregir únicamente el shell mediante `usermod -s /sbin/nologin ollama` y comprobar el registro de la cuenta.
 
+## 2026-10-18 — B020 — Corrección de shell ejecutada
+
+- **Estado:** ejecutado; salida sin advertencias observada. Lectura del registro pendiente.
+- **Acción y comandos:** `usermod -s /sbin/nologin ollama`.
+- **Incidencia y recuperación:** intento intermedio con barra final en la ruta produjo advertencia; retirado ese carácter y repetido el comando correctamente.
+- **Resultado:** retorno al prompt sin mensajes de error; no se recreó la cuenta.
+- **Siguiente paso:** `getent passwd ollama` para comprobar los campos antes de configurar el servicio.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
