@@ -2,7 +2,7 @@
 
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.
 
-Estado al 18 de octubre de 2026: Ollama 0.40.6 instalado y activo en loopback, con nube deshabilitada y límites de recursos comprobados. Descarga de modelo e inferencia pendientes. No hay integración Moodle ni habilitación institucional aprobada.
+Estado al 18 de octubre de 2026: Ollama 0.40.6 instalado y activo en loopback, con nube deshabilitada y límites de recursos comprobados. Modelo `qwen3:1.7b` descargado; inferencia pendiente. No hay integración Moodle ni habilitación institucional aprobada.
 
 ## Documentación
 

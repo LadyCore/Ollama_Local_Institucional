@@ -218,18 +218,22 @@ systemctl show ollama -p CPUQuotaPerSecUSec -p MemoryMax -p User
 
 Resultado: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296` y `User=ollama`. Cuota equivalente a 2 segundos de CPU por segundo y techo de memoria de 4 GiB. La lectura verifica parámetros de systemd; el comportamiento bajo carga requiere medición posterior.
 
-Pendientes de preparación: ensayo completo de red y recursos, descarga de modelo y recuperación disponible. Servicio activo y modo sin nube no acreditan inferencia validada ni bloqueo efectivo de toda salida.
+Pendientes de preparación: ensayo completo de red y recursos, inferencia y recuperación disponible. Servicio activo y modo sin nube no acreditan inferencia validada ni bloqueo efectivo de toda salida.
 
 ### Modelo para la primera prueba técnica
 
-Propuesto: `qwen3:1.7b`, distribución Q4_K_M de aproximadamente 1,4 GB, licencia Apache 2.0 según el [catálogo oficial](https://ollama.com/library/qwen3:1.7b), consultado el 2026-10-18. Identificador mostrado: `8f68893c685c`; registrar el identificador efectivamente descargado porque las etiquetas pueden cambiar.
+Descargado: `qwen3:1.7b`, distribución Q4_K_M de aproximadamente 1,4 GB, licencia Apache 2.0 según el [catálogo oficial](https://ollama.com/library/qwen3:1.7b), consultado el 2026-10-18. Identificador mostrado en catálogo: `8f68893c685c`; registrar el identificador efectivamente descargado porque las etiquetas pueden cambiar.
 
 La elección inicial busca una descarga pequeña para probar inferencia en CPU. El tamaño en disco no equivale al consumo de RAM; funcionamiento dentro del techo de 4 GiB y latencia pendientes de medición. No acredita aptitud para material de cursos ni selección definitiva.
 
-Comando preparado; descarga no ejecutada todavía:
+Comando ejecutado; descarga completada:
 
 ```bash
 ollama pull qwen3:1.7b
 ```
 
 Esta etapa requiere acceso externo al registro de modelos para obtener los archivos. La prueba de inferencia local y el control de salida se verifican por separado. No se suministra material de cursos en esta descarga.
+
+Evidencia: capas al 100%, `verifying sha256 digest`, `writing manifest` y `success`, con retorno al prompt. La verificación de integridad informada por Ollama no acredita seguridad del modelo ni inferencia sin salida de red.
+
+Siguiente comprobación preparada: `ollama ls`, para registrar nombre, identificador y tamaño local. [Referencia oficial de CLI](https://docs.ollama.com/cli), consultada el 2026-10-18. Ejecución pendiente.

@@ -270,6 +270,16 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no aplica; consulta de solo lectura.
 - **Siguiente paso:** descarga propuesta de `qwen3:1.7b` para prueba técnica pequeña; fuente, tamaño y estado pendiente en [preparación](preparacion-ollama.md). No se registra descarga ni aprobación para producción.
 
+## 2026-10-18 — B029 — Descarga del primer modelo completada
+
+- **Objetivo:** disponer de un modelo pequeño para el ensayo local.
+- **Estado:** ejecutado; salida verificada.
+- **Acción y comando:** `ollama pull qwen3:1.7b`.
+- **Evidencia:** capas descargadas al 100%, verificación SHA-256 y escritura de manifiesto informadas; resultado `success`.
+- **Resultado:** descarga completada. Inferencia y comportamiento de red pendientes de prueba; no acredita aptitud para producción.
+- **Recuperación prevista:** `ollama rm qwen3:1.7b` permite retirar el modelo si se descarta; no ejecutado.
+- **Siguiente paso:** registrar identificador y tamaño mediante `ollama ls`, seguido de una consulta sintética.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
