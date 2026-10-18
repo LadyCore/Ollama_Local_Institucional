@@ -124,4 +124,29 @@ Resultado observado: un intento intermedio utilizó una barra final en la ruta y
 
 Archivo previsto: `/etc/systemd/system/ollama.service`, con ejecución mediante `/usr/bin/ollama serve` bajo la cuenta dedicada. La configuración incorporará escucha local y nube deshabilitada antes del primer arranque controlado. Creación y contenido del archivo pendientes de ejecución.
 
+Contenido preparado para el primer ensayo, pendiente de guardado y verificación en la VM:
+
+```ini
+[Unit]
+Description=Ollama local
+
+[Service]
+User=ollama
+Group=ollama
+ExecStart=/usr/bin/ollama serve
+Environment="OLLAMA_HOST=127.0.0.1:11434"
+Environment="OLLAMA_NO_CLOUD=1"
+Environment="OLLAMA_MAX_LOADED_MODELS=1"
+Environment="OLLAMA_NUM_PARALLEL=1"
+MemoryMax=4G
+CPUQuota=200%
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Parámetros iniciales de laboratorio: memoria máxima de 4 GiB para el grupo del servicio, presupuesto de CPU equivalente a dos CPU completas, un modelo cargado y una solicitud paralela. CPUQuota limita tiempo agregado, no fija afinidad a núcleos concretos. La memoria no se reserva; un exceso puede provocar terminación por el controlador. Estos límites requieren verificación efectiva y medición durante inferencia. MemoryMax no sustituye control de swap ni del almacenamiento. El bloqueo de nube no sustituye una política de salida de red.
+
+La configuración de variables sigue la [FAQ oficial](https://docs.ollama.com/faq). Después del guardado corresponde validar la unidad, recargar systemd e inspeccionar los parámetros antes del primer arranque; esos pasos no se consideran ejecutados por incluir el contenido aquí.
+
 Pendientes de preparación: servicio, configuración de red y recursos, selección de modelo y recuperación disponible. La versión del cliente no acredita servicio operativo ni inferencia validada.

@@ -205,6 +205,15 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Siguiente paso:** crear y configurar `/etc/systemd/system/ollama.service` antes de iniciar Ollama.
 - **Recuperación:** no aplica; consulta de solo lectura.
 
+## 2026-10-18 — B022 — Unidad systemd preparada
+
+- **Estado:** configuración preparada; guardado, validación y arranque pendientes.
+- **Acción:** definir unidad con usuario dedicado, destino de escucha local, nube deshabilitada y límites iniciales.
+- **Parámetros:** `OLLAMA_HOST=127.0.0.1:11434`, `OLLAMA_NO_CLOUD=1`, un modelo y una solicitud paralela, `MemoryMax=4G`, `CPUQuota=200%`.
+- **Evidencia:** [contenido y alcance de límites](preparacion-ollama.md); variables contrastadas con FAQ oficial.
+- **Siguiente paso:** completar el archivo de servicio y verificarlo antes de iniciar; no se acredita configuración aplicada todavía.
+- **Recuperación:** unidad sin arranque acreditado; retirada del archivo preparado o restauración de su revisión previa si corresponde.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
