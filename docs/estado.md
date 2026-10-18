@@ -26,7 +26,7 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Ollama: no instalado por este proyecto; sin prueba de funcionamiento.
 - Modelos: ninguno seleccionado o descargado por este proyecto.
 - Restricciones y límites: propuesta inicial en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Plugins: investigación acotada a [bots por curso](bots-por-curso.md); MooChat y Exabis con soporte documental de 4.5/Ollama, AI Chat con conjunto de versiones pendiente. Ninguno ensayado ni habilitado; objetivo 4.5.8.
+- Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 
 ## Alcance inmediato corregido

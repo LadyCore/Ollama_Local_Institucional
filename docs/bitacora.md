@@ -66,6 +66,17 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Límites:** no se recuperó la página de versiones de MooChat; paquete exacto pendiente. No se confirmó la herramienta de una institución de referencia ni se guardan datos de personas.
 - **Recuperación:** no aplica a servicios; solo documentación.
 
+## 2026-10-18 — B007 — MooChat priorizado y enlace Asyntai identificado
+
+- **Objetivo:** resolver la consulta del plugin 3401 y concretar la revisión del candidato preferido.
+- **Estado:** revisión documental y estática parcial verificada; ensayo pendiente.
+- **Acción:** consultar ficha y versiones oficiales, leer archivos del autor mediante API de GitHub a revisión fija y comprobar las API principales en Moodle 4.5. Código no ejecutado.
+- **Evidencia:** [fuentes y hallazgos](revision-moochat.md). MooChat v1.8.2 / 2026042801 Beta; commit 01ac171790fa7c01ea681b6b6ff523512ef52b67. El enlace 3401 es Asyntai, con cuenta/servicio externo documentado.
+- **Resultado:** archivos propios delimitados por contexto de actividad, generación delegada al proveedor Moodle, restricción mediante instrucciones y guardado de historial recibido del cliente. No se acredita aislamiento integral ni ausencia de conexiones externas.
+- **Decisión:** priorizar MooChat para evaluación pequeña; comenzar eventualmente con texto sintético explícito, sin calificación ni incorporación automática de sección. No instalar todavía.
+- **Recuperación:** no aplica a servicios; cambios documentales trazables.
+- **Siguiente paso:** validar Ollama local y completar revisión del paquete antes de ensayar integración en 4.5.8.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
