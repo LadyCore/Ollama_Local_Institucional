@@ -290,6 +290,25 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no aplica; inspección de solo lectura.
 - **Siguiente paso:** primera consulta sintética definida en [preparación](preparacion-ollama.md).
 
+## 2026-10-18 — B031 — Consolidación de pruebas locales y perfil
+
+- **Estado:** resultados verificados en salidas aportadas; consolidación documental posterior a los ensayos.
+- **Acciones:** primera inferencia interrumpida, parada con timeout, diagnóstico, reinicio, ajustes de sesión y ensayos sintéticos progresivos. Desconexión de ambos cables virtuales y recarga del modelo con contexto nuevo. Creación y comprobación de qwen3-lab.
+- **Evidencia:** [comandos, métricas, incidente y perfil](pruebas-locales.md). Última consulta del perfil: precio correcto, 2,27 s. journald activo y contador de reinicios sin incremento al cerrar ensayos previos.
+- **Resultado:** funcionamiento local sin red acreditado en pruebas pequeñas. Causa del incidente inicial sin establecer; controles permanentes de salida pendientes.
+- **Recuperación ejecutada:** interrupción de consulta y parada del servicio en el incidente inicial; reinicio posterior. No se alteraron servicios ajenos.
+- **Siguiente paso:** comprobar requisitos del filtro IP por servicio antes de aplicarlo y verificarlo con red conectada.
+
+## 2026-10-19 — B032 — Filtro persistente y recuperación de continuidad
+
+- **Estado:** ejecución informada en bitácora técnica de la sesión 18–19 de octubre, aportada por la administradora; no reinspección de la VM.
+- **Acciones:** comprobación de systemd 252, cgroups v2 y soporte BPF; respaldo de unidad; creación y validación de network.conf; recarga y reinicio. API local respondió con modelos disponibles.
+- **Evidencia y comandos:** [registro del control de red](control-red.md). Misma unidad temporal, usuario y destino: timeout con filtro y HTTP 301 sin filtro.
+- **Resultado y límites:** evidencia favorable para conexión IPv4 HTTP ensayada en unidad temporal; no prueba universal ni intento exterior directo del servicio Ollama. Archivo temporal eliminado y ausencia comprobada.
+- **Confirmación posterior:** ambos adaptadores quedaron conectados al cierre, según mensaje de la administradora del 2026-10-19. Se resuelve el pendiente que figuraba en la bitácora aportada.
+- **Recuperación:** respaldo y filtro permanente conservados. Retirada del filtro no ejecutada.
+- **Siguiente paso:** inferencia con filtro y red conectada, y ampliación de validación del servicio real. Consolidación documental sin datos de red internos ni identificadores personales.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

@@ -2,7 +2,7 @@
 
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.
 
-Estado al 18 de octubre de 2026: Ollama 0.40.6 instalado y activo en loopback, con nube deshabilitada y límites de recursos comprobados. Modelo `qwen3:1.7b` descargado; inferencia pendiente. No hay integración Moodle ni habilitación institucional aprobada.
+Estado al 19 de octubre de 2026: Ollama 0.40.6 instalado en loopback, con nube deshabilitada y límites de recursos comprobados. Inferencia sin red y perfil `qwen3-lab` verificados en ensayos sintéticos. Filtro IP persistente aplicado; ensayo comparativo IPv4 favorable en unidad temporal y API local accesible. No hay integración Moodle ni habilitación institucional aprobada.
 
 ## Documentación
 
@@ -10,6 +10,8 @@ Estado al 18 de octubre de 2026: Ollama 0.40.6 instalado y activo en loopback, c
 - [Entorno y estado](docs/estado.md): inventario confirmado, límites y próximos pasos.
 - [Protocolo de evaluación](docs/plan-evaluacion.md): secuencia de trabajo, restricciones, pruebas y criterios de cierre.
 - [Preparación de Ollama](docs/preparacion-ollama.md): requisitos y comprobación previa de instalación.
+- [Pruebas locales](docs/pruebas-locales.md): incidente inicial, métricas, funcionamiento sin red y perfil reproducible.
+- [Control de red](docs/control-red.md): filtro persistente, ensayo comparativo y límites de la evidencia.
 - [Compatibilidad Moodle](docs/compatibilidad-moodle.md): matriz de candidatos y resultados.
 - [Seguridad y confidencialidad](docs/seguridad-confidencialidad.md): fundamentos, requisitos de validación y evidencia requerida.
 - [Antecedentes en GitHub](docs/antecedentes-github.md): referencias de arquitectura e incidencias contrastadas con código.

@@ -1,6 +1,6 @@
 # Entorno y estado
 
-Actualizado: 2026-10-18. Etapa: Ollama instalado; escucha local y parámetros de recursos comprobados. Inferencia y controles de salida pendientes de ensayo.
+Actualizado: 2026-10-19. Etapa: inferencia sin red y perfil qwen3-lab verificados. Filtro persistente aplicado; ensayo comparativo IPv4 favorable en unidad temporal. Ambos adaptadores conectados al cierre, confirmado por la administradora. Evidencia en [pruebas locales](pruebas-locales.md) y [control de red](control-red.md).
 
 ## Inventario de laboratorio confirmado
 
@@ -23,12 +23,12 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 
 ## Situación
 
-- Ollama: 0.40.6 iniciado, `active (running)`, con cuenta dedicada y unidad validada. Arranque automático `disabled`. Registro de nube deshabilitada confirmado. Modelo descargado e inferencia sin probar.
+- Ollama: 0.40.6 con cuenta dedicada y unidad validada. Arranque automático `disabled`. Nube deshabilitada. Incidente inicial de ejecución y parada documentado; ensayos posteriores completados con dos hilos y sin razonamiento. journald activo, NRestarts=3 sin incremento en comprobación final.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).
 - Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Servicio configurado y modelo descargado. SELinux Enforcing en la comprobación inicial.
-- Modelos: `qwen3:1.7b` descargado con resultado `success`. `ollama ls` confirma identificador `8f68893c685c` y tamaño 1,4 GB, coincidentes con el catálogo consultado. Inferencia pendiente. No constituye selección para producción.
-- Restricciones y límites: requisitos de validación en [seguridad y confidencialidad](seguridad-confidencialidad.md); implementación y ensayo pendientes.
-- Servicio: [arranque y socket comprobados](preparacion-ollama.md). Escucha TCP `127.0.0.1:11434` asociada a Ollama. Propiedades verificadas: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`. Ensayo bajo carga, salida de red, colas y tiempos de espera pendiente.
+- Modelos: `qwen3:1.7b`, identificador `8f68893c685c`, 1,4 GB. Perfil qwen3-lab creado y parámetros verificados: num_thread=2, num_ctx=2048, num_predict=256; ejecución con --think=false. Inferencia sintética sin red satisfactoria; no constituye selección para producción.
+- Restricciones y límites: network.conf aplicado con IPAddressDeny=any e IPAddressAllow=localhost. Ensayo comparativo en unidad temporal: timeout con filtro y HTTP 301 sin filtro. Alcance limitado a conexión IPv4 HTTP ensayada; no acredita aislamiento completo. [Detalle](control-red.md).
+- Servicio: escucha TCP `127.0.0.1:11434` comprobada previamente. Propiedades verificadas: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`. Activo y /api/tags funcional tras reiniciar con filtro. Inferencia posterior al filtro, prueba exterior en servicio real, IPv6 y concurrencia pendientes.
 - Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
 - Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
 - Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas; README limitado a descripción y método técnico. Reglas de actuación del asistente en AGENTS.md. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.
