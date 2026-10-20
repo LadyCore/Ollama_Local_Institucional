@@ -1,6 +1,6 @@
 # Entorno y estado
 
-Actualizado: 2026-10-19. Etapa: inferencia sin red y perfil qwen3-lab verificados. Filtro persistente aplicado; ensayo comparativo IPv4 favorable en unidad temporal. Ambos adaptadores conectados al cierre, confirmado por la administradora. Evidencia en [pruebas locales](pruebas-locales.md) y [control de red](control-red.md).
+Actualizado: 2026-10-19. Etapa: integración AERO con MooChat y Ollama operativa en laboratorio. Evidencia y configuración vigente en [integración AERO](integracion-aero.md). Latencia y persistencia pendientes; no aprobado para producción. Las comprobaciones de recursos y contadores de reinicios siguientes corresponden a sus muestras históricas, no a mediciones continuas.
 
 ## Inventario de laboratorio confirmado
 
@@ -28,9 +28,11 @@ La memoria disponible y el espacio libre son mediciones puntuales, no reservas g
 - Preparación: [comprobación previa, dependencia, descarga y extracción](preparacion-ollama.md) registradas. zstd 1.5.5-1.el9.x86_64 instalado. Paquete oficial Ollama v0.40.6 con SHA-256 coincidente. Servicio configurado y modelo descargado. SELinux Enforcing en la comprobación inicial.
 - Modelos: `qwen3:1.7b`, identificador `8f68893c685c`, 1,4 GB. Perfil qwen3-lab creado y parámetros verificados: num_thread=2, num_ctx=2048, num_predict=256; ejecución con --think=false. Inferencia sintética sin red satisfactoria; no constituye selección para producción.
 - Restricciones y límites: network.conf aplicado con IPAddressDeny=any e IPAddressAllow=localhost. Ensayo comparativo en unidad temporal: timeout con filtro y HTTP 301 sin filtro. Alcance limitado a conexión IPv4 HTTP ensayada; no acredita aislamiento completo. [Detalle](control-red.md).
-- Servicio: escucha TCP `127.0.0.1:11434` comprobada previamente. Propiedades verificadas: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`. Activo y /api/tags funcional tras reiniciar con filtro. Inferencia posterior al filtro, prueba exterior en servicio real, IPv6 y concurrencia pendientes.
-- Plugins: MooChat priorizado; v1.8.2 / 2026042801 **Beta**, declarado para 4.5. [Revisión inicial de código y comparación con Asyntai](revision-moochat.md) registrada. Ninguno ensayado ni habilitado; objetivo 4.5.8. Otros candidatos como referencia en [bots por curso](bots-por-curso.md).
-- Integración, acceso desde red y uso institucional: pendientes de evaluación y aprobación específica.
+- Servicio: escucha TCP `127.0.0.1:11434`. Propiedades verificadas: `CPUQuotaPerSecUSec=2s`, `MemoryMax=4294967296`, `User=ollama`. Activo y API funcional tras reinicio manual. Inferencia posterior al filtro y prueba exterior desde servicio real completadas. IPv6, concurrencia y auditoría integral de salida pendientes.
+- Plugins: MooChat v1.8.2 / 2026042801 **Beta** instalado por ZIP y habilitado; actividad AERO ensayada con datos sintéticos sin archivos ni contenido de sección. Objetivo Moodle 4.5.8; comprobación independiente de versiones exactas de plataforma y dependencias pendiente. [Resultados](integracion-aero.md).
+- Conexión: proveedor OpenAI compatible dirigido a Ollama local; generación de texto habilitada, imagen y resumen deshabilitados. SELinux Enforcing; `httpd_can_network_connect` activado sin persistencia. Seguridad HTTP global ajustada; pendiente solución de mínimo privilegio.
+- Rendimiento: tres respuestas HTTP 200 de 39,99 / 13,19 / 17,99 s. API directa con `/no_think` agotó 256 tokens en razonamiento; `reasoning_effort: none` produjo contenido final en 11,57 s. Este último control todavía no se integra en Moodle.
+- Uso institucional: aprobación técnica/regulatoria y definición pedagógica son caminos distintos; ambos pendientes. Ensayo local no acredita seguridad completa ni aptitud para producción.
 - Documentación: referencias a las áreas del entorno expresadas mediante denominaciones genéricas; README limitado a descripción y método técnico. Reglas de actuación del asistente en AGENTS.md. Repositorio privado; revisión del historial pendiente antes de una eventual publicación.
 - Antecedentes: [ChatOllama y fuentes directamente aplicables](antecedentes-github.md) registrados. Reporte de seguridad de MooChat sobre extracción PPTX contrastado con código; integración condicionada a resolución o exclusión verificable de la ruta. Sin reproducción local.
 

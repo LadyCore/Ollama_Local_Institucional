@@ -59,11 +59,17 @@ Se eliminó `/etc/systemd/system/ollama-nettest.service`, se recargó systemd y 
 
 No se modificaron deliberadamente Moodle ni MySQL. El aviso de rc.local sin permiso ejecutable quedó sin intervención. Los tres avisos históricos de timeout y SIGKILL corresponden a la parada anterior al filtro: no se atribuyen al nuevo control.
 
+## Ampliación verificada el 19 de octubre
+
+La evidencia anterior corresponde a la etapa previa a integración. Se amplió con una petición desde `ExecStartPost` de ollama.service mediante drop-in temporal: curl IPv4 al destino de control respondió 301 desde terminal y timeout de 5000 ms dentro del servicio (16:00:45). Se eliminó el drop-in temporal, se recargó systemd y se verificaron servicio activo y API local HTTP 200. El filtro persistente se conservó.
+
+Después se verificó inferencia desde MooChat. Para ello se ajustó la seguridad HTTP global de Moodle y se habilitó temporalmente `httpd_can_network_connect`, manteniendo SELinux Enforcing. Este permiso no restringe PHP exclusivamente a Ollama. [Detalles, recuperación y límites](integracion-aero.md). No se ha demostrado ausencia de salida de datos de la cadena completa.
+
 ## Pendientes y recuperación
 
-- Comprobar inferencia local con el filtro aplicado y red conectada.
-- Ampliar la evidencia de bloqueo efectivo del servicio real y, cuando exista conectividad de control, cobertura IPv6. Un fallo sin control positivo no acredita bloqueo.
+- Inferencia local con filtro e integración sintética completadas; ampliar a cargas controladas.
+- Ampliar cobertura IPv6 cuando exista conectividad de control. Un fallo sin control positivo no acredita bloqueo.
 - Revisar persistencia tras reinicio de la VM y política de arranque manual del servicio.
-- Verificar integración Moodle por separado; no está instalada ni aprobada por estas pruebas.
+- Completar auditoría de la integración Moodle, ya instalada y ensayada con texto; sin aprobación para producción.
 
 Recuperación prevista, no ejecutada: retirar únicamente network.conf, recargar systemd y reiniciar Ollama. Esa operación elimina este filtro y requiere mantener el aislamiento de laboratorio mientras se diagnostica. El respaldo corresponde a la unidad original; no incluye el archivo adicional.

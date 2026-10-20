@@ -1,12 +1,12 @@
 # Matriz de compatibilidad Moodle
 
-Consulta: 2026-10-18. Plataforma objetivo: Moodle 4.5.8. Estado: compatibilidad documental de la rama 4.5; ningún ensayo local realizado. La instalación de paquetes requiere comprobar previamente la versión efectiva del entorno.
+Consulta inicial: 2026-10-18; actualización de ensayo: 2026-10-19. Plataforma objetivo: Moodle 4.5.8. MooChat v1.8.2 instalado por ZIP e integración sintética con Ollama operativa. No constituye validación completa de compatibilidad. [Configuración, evidencia y límites](integracion-aero.md).
 
 La verificación de versiones de Moodle y sus dependencias permanece pendiente. El laboratorio de actualización a Moodle 5.3 es un entorno independiente y sus versiones no se atribuyen a este clon.
 
 ## Búsqueda acotada de bots por curso
 
-La selección de laboratorio prioriza MooChat para consulta de material por curso, después de validar Ollama local. [MooChat, Exabis y AI Chat](bots-por-curso.md) registra los antecedentes y pendientes de compatibilidad. La instalación e integración permanecen pendientes.
+La selección de laboratorio prioriza MooChat para consulta de material por curso, después de validar Ollama local. [MooChat, Exabis y AI Chat](bots-por-curso.md) registra antecedentes. Instalación e integración textual de MooChat completadas; consulta de archivos y controles por curso pendientes.
 
 ## Revisión posterior de Terus RAG
 
@@ -18,7 +18,7 @@ Los rangos publicados incluyen Moodle 4.5, no un certificado de funcionamiento e
 
 | Componente | Versión consultada | Uso posible | Conexión y respaldo documental |
 |---|---|---|---|
-| mod_moochat | v1.8.2, build 2026042801; Beta | Actividad de consulta con material del curso; candidato priorizado | Subsistema IA de Moodle con Ollama local; [versiones](https://marketplace.moodle.com/plugins/3741/versions) y [revisión de código](revision-moochat.md). Ensayo en 4.5.8 pendiente |
+| mod_moochat | v1.8.2, build 2026042801; Beta | Actividad AERO instalada; ensayo textual sintético satisfactorio | Subsistema IA de Moodle con Ollama local; [versiones](https://marketplace.moodle.com/plugins/3741/versions), [revisión de código](revision-moochat.md) y [resultados](integracion-aero.md). Documentos, permisos y concurrencia pendientes |
 | Proveedor incluido aiprovider_openai | Incluido en Moodle 4.5 | Generación de texto y resumen mediante las ubicaciones de IA del editor y asistencia de curso | API compatible de Ollama; procedimiento en [MoodleDocs 4.5](https://docs.moodle.org/405/en/Ollama). No requiere cuenta OpenAI para este destino local |
 | tiny_aipromptgen | 1.9, build 2026030501; Stable | Construir instrucciones guiadas y generar borradores dentro de TinyMCE | Ollama explícito; Moodle 4.5 incluido en [versiones](https://marketplace.moodle.com/plugins/3543/versions). [Ficha](https://marketplace.moodle.com/plugins/3543) indica PHP mínimo 8.1 |
 | block_exaaichat | 5.2, build 2026091000; Stable | Chat configurable por curso; la consulta documental local no está acreditada | Ollama explícito para chat; Moodle 4.5 incluido en [versiones](https://marketplace.moodle.com/plugins/3286/versions?show=all). El README documenta archivos/vector store de OpenAI para Simple RAG |

@@ -309,6 +309,35 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** respaldo y filtro permanente conservados. Retirada del filtro no ejecutada.
 - **Siguiente paso:** inferencia con filtro y red conectada, y ampliación de validación del servicio real. Consolidación documental sin datos de red internos ni identificadores personales.
 
+## 2026-10-19 — B033 — Prueba de salida desde el servicio real
+
+- **Estado:** verificado en salidas aportadas.
+- **Objetivo y acción:** contrastar salida IPv4 con red conectada; curl desde terminal respondió HTTP 301. Drop-in temporal en `/run/systemd/system/ollama.service.d/prueba.conf` con `[Service]` y `ExecStartPost=-/usr/bin/curl -4 -I --connect-timeout 5 --max-time 10 http://1.1.1.1`.
+- **Evidencia:** `systemd-analyze verify ollama.service` sin errores; recarga y reinicio; registro 16:00:45 con curl 28 y timeout de 5000 ms dentro de ollama.service.
+- **Resultado:** bloqueo del destino IPv4 ensayado desde servicio real; no prueba universal ni control de salida de PHP.
+- **Recuperación ejecutada:** eliminado solo el drop-in temporal, `systemctl daemon-reload`, servicio active y `/api/tags` HTTP 200. Filtro permanente conservado.
+- **Siguiente paso:** integración; cobertura IPv6 y auditoría completa pendientes.
+
+## 2026-10-19 — B034 — MooChat y actividad AERO operativos
+
+- **Estado:** instalación y respuestas verificadas en evidencia aportada; registro consolidado al cierre.
+- **Objetivo y acciones:** snapshot previo 16:39, instalación ZIP MooChat v1.8.2, proveedor local y actividad AERO con contenido sintético. Diagnóstico de bloqueos HTTP y SELinux, recuperación del servicio tras apagados.
+- **Comandos, configuración y evidencia:** [registro reproducible de integración](integracion-aero.md).
+- **Resultado:** dos preguntas sintéticas respondidas correctamente; saludo inadecuado. HTTP 200 con latencias 39,99 / 13,19 / 17,99 s. No se probaron documentos ni separación de usuarios.
+- **Decisión:** laboratorio operativo; no habilitación institucional. Cambios HTTP globales y permiso de red web temporal documentados.
+- **Recuperación:** disponible snapshot previo; reversión del booleano con `setsebool httpd_can_network_connect off`. No ejecutada al cierre. Arranque automático de Ollama no habilitado.
+- **Siguiente paso:** evaluar rendimiento y permiso mínimo, sin extrapolar seguridad de Ollama a toda la cadena Moodle.
+
+## 2026-10-19 — B035 — Comparación del control de razonamiento
+
+- **Estado:** API directa verificada; aplicación del control en Moodle pendiente.
+- **Objetivo:** distinguir demora y salida generada sin pasar por MooChat.
+- **Acción:** curl a `/v1/chat/completions` con qwen3-lab y pregunta sintética; comparación entre `/no_think` textual y añadido `reasoning_effort: none`.
+- **Evidencia:** 20,140108 s, 256 tokens, reasoning y contenido final vacío, cierre length; segunda ejecución 11,567252 s, 114 tokens, respuesta final correcta y cierre stop. [Comando y límites](integracion-aero.md).
+- **Resultado:** control explícito eficaz en este caso; instrucción textual insuficiente. No son pruebas idénticas al contexto que envía MooChat ni certifican rendimiento general.
+- **Recuperación:** no se cambiaron archivos ni perfil del modelo; parámetros de solicitud únicamente.
+- **Siguiente paso:** definir incorporación mantenible del parámetro a la integración; no se aplicó aún ni se alteró el núcleo Moodle.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
