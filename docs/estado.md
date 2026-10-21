@@ -1,6 +1,19 @@
 # Entorno y estado
 
-Actualizado: 2026-10-19. Etapa: integración AERO con MooChat y Ollama operativa en laboratorio. Evidencia y configuración vigente en [integración AERO](integracion-aero.md). Latencia y persistencia pendientes; no aprobado para producción. Las comprobaciones de recursos y contadores de reinicios siguientes corresponden a sus muestras históricas, no a mediciones continuas.
+Actualizado: 2026-10-20. Etapa: conexión AERO operativa, calidad no validada. Estado vigente y matriz en [ensayos del 20 de octubre](ensayos-aero-2026-10-20.md); [integración del 19](integracion-aero.md) es un antecedente histórico. Latencia, estabilidad de VM y persistencia pendientes; no aprobado para producción. Las comprobaciones de recursos y contadores de reinicios siguientes corresponden a sus muestras históricas, no a mediciones continuas.
+
+## Continuidad inmediata — prevalece sobre antecedentes
+
+- Proveedor Moodle: qwen3-estudio. Perfil verificado al cierre: num_predict 1536, num_thread 2, num_ctx 2048, temperature 0.6, top_k 20, top_p 0.95, repeat_penalty 1. Inspección del modelo: qwen3, 2.0B, Q4_K_M; contexto declarado 40960, thinking predeterminado true. La referencia histórica 1.7b no reemplaza esta evidencia.
+- Discrepancia resuelta operativamente: Modelfile con 1536 y creación success coexistieron con parámetros consultados en 512; se recreó y se comprobó 1536. Causa pendiente. No asumir valor efectivo desde el mensaje success.
+- Prompts sin /no_think en ambos niveles. Cambio experimental del system global a español neutro falló y fue revertido; permanece instrucción original de resumen/texto plano en inglés. No se modificó el código de Moodle/MooChat.
+- ProxyTimeout 240 en VirtualHost Moodle; configtest Syntax OK; recarga indicada y respuesta posterior observada. Ollama activo en muestras, sin autoinicio. Permiso httpd_can_network_connect on sin persistencia; SELinux no desactivado.
+- Fallos web anteriores: registro proxy_fcgi AH01075/70007 confirma agotamiento de espera Apache/PHP. También hubo bloqueo por booleano off, corregido temporalmente. No confundir ambos incidentes.
+- Calidad: prueba de lápices correcta en AERO (~48 s); prueba de clases incorrecta repetidamente (~25–60 s), incluso sin historial y después de verificar 1536. API directa: éxitos parciales y errores según variantes. Última solicitud con instrucciones AERO + User/Assistant falló en 78,812803 s, 455 tokens, stop y razonamiento presente; no agotó límite.
+- No se demostró que omitir reasoning_effort desactive thinking: consulta directa sin ese campo generó reasoning. Comparación con Moodle todavía no equivalente; pendiente system global y comprobación del texto almacenado/HTML.
+- Pausas espontáneas de VM y avisos clocksource interfieren con medición de tiempos; causa no determinada. No declarar un benchmark ni deterioro progresivo del modelo.
+- Próximo paso: banco reproducible de variantes, con repeticiones y resultados resumidos, sin continuar ajustes manuales a ciegas. No implementado todavía. Exploración de PDF, preguntas guía, diapositivas y Tutor AI pendiente; descarga no equivale a instalación.
+- Trazabilidad: consolidación retrospectiva de avances posteriores a B035 en B036–B041 y documento de ensayos; no se registró sincronización durante cada prueba. Verificación del commit remoto requerida al publicar este cambio.
 
 ## Inventario de laboratorio confirmado
 
@@ -22,6 +35,8 @@ Actualizado: 2026-10-19. Etapa: integración AERO con MooChat y Ollama operativa
 La memoria disponible y el espacio libre son mediciones puntuales, no reservas garantizadas. No se conservan identificadores ni capturas originales en el repositorio.
 
 ## Situación
+
+Los puntos siguientes conservan la situación histórica previa al día 20; para modelo, prompts, calidad y timeout rige la sección de continuidad inmediata.
 
 - Ollama: 0.40.6 con cuenta dedicada y unidad validada. Arranque automático `disabled`. Nube deshabilitada. Incidente inicial de ejecución y parada documentado; ensayos posteriores completados con dos hilos y sin razonamiento. journald activo, NRestarts=3 sin incremento en comprobación final.
 - Distribución de componentes: Moodle 4.5 incluye el subsistema IA y su conector; Ollama y sus modelos requieren instalación/descarga independientes. [Detalle](preparacion-ollama.md).

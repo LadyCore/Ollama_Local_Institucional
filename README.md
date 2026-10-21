@@ -2,9 +2,11 @@
 
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.
 
-Estado al 19 de octubre de 2026: integración de MooChat v1.8.2 con Ollama local operativa en laboratorio mediante la actividad AERO. Dos consultas sintéticas respondidas correctamente; latencia pendiente de mejora. Filtro IP persistente y prueba de salida IPv4 desde el servicio real documentados. Conexión web habilitada mediante permiso SELinux temporal y ajustes globales HTTP de Moodle. No hay aprobación para producción ni demostración integral de ausencia de salida de datos desde Moodle.
+Estado al 20 de octubre de 2026: integración de MooChat v1.8.2 con Ollama local operativa en laboratorio, pero calidad de AERO no validada: errores conceptuales repetidos incluso con conversación nueva y perfil de salida de 1536 tokens verificado. Se diagnosticó timeout Apache/PHP y se aplicó ProxyTimeout 240 al sitio de laboratorio. Filtro IP persistente y permiso SELinux web temporal conservados. No hay aprobación para producción ni demostración integral de ausencia de salida de datos desde Moodle. Las respuestas correctas aisladas no constituyen validación pedagógica.
 
 ## Documentación
+
+- [Ensayos AERO del 20 de octubre](docs/ensayos-aero-2026-10-20.md): matriz de resultados, cambios efectivos, discrepancias, reversiones y siguiente comparación pendiente.
 
 - [Integración AERO: sesión del 19 de octubre](docs/integracion-aero.md): configuración, diagnóstico, resultados y continuidad.
 

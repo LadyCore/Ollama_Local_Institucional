@@ -338,6 +338,60 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** no se cambiaron archivos ni perfil del modelo; parámetros de solicitud únicamente.
 - **Siguiente paso:** definir incorporación mantenible del parámetro a la integración; no se aplicó aún ni se alteró el núcleo Moodle.
 
+## 2026-10-20 — B036 — Consolidación retrospectiva de modelos y calidad
+
+- **Estado:** verificado en evidencia aportada; registro retrospectivo de sesión anterior y continuación, sin inventar horas.
+- **Objetivo y acciones:** experimento aero-lab no desplegado; creación qwen3-estudio con 512; ensayos C/L, follow-ups y chats nuevos. [Cronología, comandos y resultados](ensayos-aero-2026-10-20.md).
+- **Evidencia:** aero-lab 12,481595 s/84 tokens, incorrecto; estudio inicialmente mostró 512. Respuestas simples correctas y explicaciones posteriores erróneas. Muestra servidor 28,90 s/247 tokens.
+- **Resultado:** no selección por velocidad ni aprobación pedagógica. Ahorro de energía informado en primer incidente; causalidad de pausas posteriores pendiente.
+- **Recuperación:** modelo experimental separado; no cambio del modelo base original acreditado.
+- **Siguiente paso:** comparación directa del control de razonamiento.
+
+## 2026-10-20 — B037 — API directa y límites de salida
+
+- **Estado:** verificado en capturas, matriz D01–D05 del documento de ensayos.
+- **Acciones:** consultas a chat completions, cambios de /no_think, reasoning_effort y max_tokens por solicitud; recuperación del servicio detenido con systemctl start ollama.
+- **Evidencia:** D01 62,73 s/512/length/content vacío; D02 38,28 s/476/stop incorrecto; D03 102,02 s/1129 con inconsistencias; D04 83,51 s/769 correcto en contexto; D05 74,91 s/885 correcto.
+- **Resultado:** más presupuesto permitió respuestas completas; no garantiza verdad. Qwen3 inspeccionado como 2.0B/Q4_K_M y thinking true por defecto.
+- **Recuperación:** parámetros de estas solicitudes no persistidos. No se atribuyen niveles de razonamiento graduados al modelo booleano.
+- **Siguiente paso:** trasladar configuración y comprobar valores efectivos.
+
+## 2026-10-20 — B038 — Diagnóstico web y timeout
+
+- **Estado:** salidas de servicio, booleano, registros y configtest verificadas; recarga indicada con respuesta web posterior.
+- **Acciones y comandos:** httpd_can_network_connect off restablecido con `setsebool httpd_can_network_connect on`; búsqueda de ErrorLog; identificación de AH01075/70007 en proxy_fcgi; ProxyTimeout 240 dentro del VirtualHost Moodle; `apachectl configtest`, `systemctl reload httpd`.
+- **Evidencia:** Ollama active, permiso on; HTTP 200 del servidor con 2m5s total y 73,70s de procesamiento; interfaz falló en ~68s. Configtest Syntax OK. Posterior respuesta de lápices correcta en ~48s.
+- **Resultado:** conexión y timeout son incidentes distintos; no se desactivó SELinux. Avisos clocksource y pausas VM documentados sin causa atribuida.
+- **Recuperación prevista:** retirar solo ProxyTimeout, validar y recargar; booleano off revierte permiso. No ejecutada. Persistencia de booleano y arranque siguen pendientes.
+- **Siguiente paso:** calidad en chats nuevos, no solo conectividad.
+
+## 2026-10-20 — B039 — Fallos en AERO, reversión y perfil efectivo
+
+- **Estado:** respuestas y parámetros verificados; restauración de prompt informada con «listo».
+- **Acciones:** pruebas M01–M05; instrucción global en español neutro ensayada y revertida; sin /no_think. Inspección de parámetros mostró 512 pese a archivo con 1536 y create success previo. Nueva creación y consulta confirmaron 1536.
+- **Evidencia:** fallos C con historial y sin historial; ~34s, ~25s y ~60s según ensayo. La prueba posterior a 1536 siguió validando erróneamente 7,5 min.
+- **Resultado:** aumento de tokens no solucionó fiabilidad. Causa de discrepancia de perfil no determinada; se corrige afirmación prematura de actualización efectiva.
+- **Recuperación:** prompt global original restaurado, no los límites ni el timeout. No se editaron archivos del plugin.
+- **Siguiente paso:** contrastar estructura real de solicitudes.
+
+## 2026-10-20 — B040 — Código instalado y comparación de formato
+
+- **Estado:** fragmentos instalados y consultas directas verificados; equivalencia completa con Moodle pendiente.
+- **Acciones:** inspección read-only de process_generate_text.php y send_message.php; revisión de concatenación de prompt/historial y campos de API; recuperación de consultas por fc. Matriz D06–D08 en [ensayos](ensayos-aero-2026-10-20.md).
+- **Evidencia:** proveedor no agrega reasoning_effort ni max_tokens, toma message.content. MooChat concatena instrucciones/historial como User/Assistant. D06 aún medium: 135,43s/1317, correcto en lo esencial. D07 sin campo: 107,00s/1218, reasoning presente, explicación confusa. D08 con instrucciones y etiquetas: 78,81s/455/stop, incorrecto, reasoning presente.
+- **Resultado:** no hay evidencia de thinking necesariamente desactivado por omisión del campo. Último error no agotó salida. Sensibilidad al mensaje es hipótesis, no causalidad probada: sin réplicas, se cambiaron varias partes; falta system global para equivalencia.
+- **Recuperación:** no hubo parches ni captura de tráfico; consultas no entrenan el modelo ni incluyen automáticamente historial de ensayos anteriores.
+- **Siguiente paso:** detener cambios a ciegas; preparar comparación reproducible con repeticiones. Banco todavía no implementado.
+
+## 2026-10-20 — B041 — Funcionalidades, referencias y recuperación de trazabilidad
+
+- **Estado:** controles visibles verificados; descarga de alternativa informada; revisión de código público realizada; funcionalidades no ensayadas pendientes.
+- **Acciones:** contraste visual de MooChat/Tutor AI; lectura de capacityAr y antecedentes aplicados. Consolidación de registros posteriores a B035 y actualización de estado/README/compatibilidad.
+- **Evidencia:** avatar AERO visible; carga de materiales y restricción por contenido visibles. Tutor AI identificado en capturas como local_dttutor, no equiparado al nombre EdWork. capacityAr usa Groq/Gemini/mock, no Ollama implementado en los clientes revisados.
+- **Resultado:** no instalar sustitutos ni prometer PDF, preguntas guía o diapositivas como capacidades verificadas. Documentación pendiente fue detectada por consulta de la administradora; no hubo sincronización por prueba. Remoto previo inspeccionado: 49022bb321890c16a69c7307bb5d47b132c23620, privado.
+- **Recuperación:** consolidación retrospectiva con resultados fallidos, reversiones y evidencias parciales explícitos; sin imágenes ni identificadores del entorno.
+- **Siguiente paso:** verificar publicación remota de este cambio documental y registrar avances futuros junto con estado, sin esperar una nueva solicitud.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

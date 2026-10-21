@@ -1,5 +1,7 @@
 # Integración AERO — 19 de octubre de 2026
 
+Registro histórico. La configuración posterior, los fallos de calidad y los cambios de recuperación están en [ensayos del 20 de octubre](ensayos-aero-2026-10-20.md). No usar los valores de esta sesión como estado vigente sin consultar ese documento.
+
 ## Alcance y evidencia
 
 Estado: verificado mediante salidas y capturas aportadas por la administradora; no acceso directo del asistente a la VM. Laboratorio personal VirtualBox, no producción. Evidencia transcrita y anonimizada, sin capturas ni material institucional. Objetivo Moodle 4.5.8; MooChat v1.8.2, build 2026042801, Beta, visible instalado. Las versiones exactas restantes requieren comprobación independiente.
