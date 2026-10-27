@@ -422,6 +422,24 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** cambio exclusivamente documental, sin servicios afectados.
 - **Siguiente paso:** fijar formatos y versión de candidatos; revisar cadena offline, permisos y consumo completo. Publicar y verificar este registro con actualización de estado en el mismo commit.
 
+## 2026-10-26 — B045 — Ampliación por bitácora transferida
+
+- **Estado:** documento DOCX leído; pruebas y métricas informadas mediante transcripciones, no ejecutadas nuevamente.
+- **Objetivo y acción:** contrastar la nueva fuente con B043/B044 y preservar diferencias de evidencia. Se registra PDF UML exitoso con Internet habilitado el 26, tras fallo offline previo; causalidad pendiente. Se mantiene aclaración directa de que La farolera era TXT cargado.
+- **Evidencia:** evaluación de entrada 45,2 s/1905 tokens; generación 26,8 s/237 tokens; total interno 72 s frente a HTTP 1m38s. Inspección instalada informada: extracción TXT/PDF, concatenación en fullprompt y core_ai; comandos y límites en [ampliación](ensayos-offline-2026-10-25.md).
+- **Resultado:** PDF no debe describirse como incapaz de funcionar; se conserva fallo offline específico. La entrada explica más tiempo que la generación en la muestra, sin explicar toda la demora HTTP.
+- **Decisión y recuperación:** actualización documental, sin instalar ni modificar servicios. No publicar DOCX ni capturas. Mantener selección bajo límite de laboratorio y pruebas repetitivas pausadas.
+- **Siguiente paso:** separar tiempos de procesamiento y revisar contexto, estabilidad y candidatos; búsqueda de return $content informada como no ejecutada.
+
+
+## 2026-10-27 — B046 — Reanudación de sincronización documental
+
+- **Estado:** actualización documental preparada; publicación y verificación remota realizadas como cierre de esta sesión, con resultado comunicado por separado.
+- **Objetivo y acción:** reanudar la sincronización de B045 solicitada por la administradora; revisar privacidad, enlaces, estado de rama y coincidencia de archivos publicados.
+- **Resultado y límites:** se conserva el carácter informado de las métricas del DOCX. PDF exitoso con conectividad no demuestra requisito de Internet. No se realizaron cambios de servicios ni nuevas pruebas en la VM.
+- **Recuperación:** publicación sin forzar la rama, preservando cambios remotos; en caso de discrepancia, detener y revisar antes de publicar.
+- **Siguiente paso:** revisar candidatos y consumo integral bajo el límite del laboratorio; no repetir ajustes de MooChat a ciegas.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

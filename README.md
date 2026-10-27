@@ -6,6 +6,8 @@ Estado al 26 de octubre de 2026: AERO se evalúa para responder con materiales d
 
 ## Documentación
 
+Ampliación registrada al 27 de octubre: la bitácora aportada informa una prueba exitosa con PDF el 26, con Internet habilitado, posterior al fallo offline. No se demuestra que Internet sea requisito. La medición transcrita registra 45,2 s de evaluación de entrada y 26,8 s de generación; 72 s internos frente a 1m38s HTTP. Véanse evidencia y límites en el registro offline.
+
 - [Pruebas offline y candidatos, 25–26 de octubre](docs/ensayos-offline-2026-10-25.md): resultados de documentos, incidentes de VM, recursos y selección pendiente.
 
 - [Ensayos AERO del 20 de octubre](docs/ensayos-aero-2026-10-20.md): matriz de resultados, cambios efectivos, discrepancias, reversiones y siguiente comparación pendiente.

@@ -1,5 +1,7 @@
 # Matriz de compatibilidad Moodle
 
+Ampliación al 2026-10-27: bitácora aportada informa PDF leído correctamente el 26 con conectividad habilitada. Se mantiene el fallo offline previo y la causa pendiente; no afirmar incapacidad general de PDF ni dependencia demostrada de Internet. [Evidencia y medición transcrita](ensayos-offline-2026-10-25.md).
+
 Actualización 2026-10-26: pruebas repetitivas de MooChat pausadas. TXT funcional (guía y La farolera); Word sin recuperación; PDF fallido informado. Código público de carga directa sin extractor Word y con extracción PDF local. SOLA, AnythingLLM y OpenChat/Open WebUI son candidatos de investigación, no sustitutos aprobados ni medidos. Tutor AI (local_dttutor) se recupera del antecedente B041. Primero debe acreditarse viabilidad del conjunto en aproximadamente 9 GB de laboratorio; después en 15 GiB del destino. [Matriz actual, fuentes y límites](ensayos-offline-2026-10-25.md). Los apartados siguientes conservan la selección histórica y no constituyen una orden de instalación vigente.
 
 Consulta inicial: 2026-10-18; actualización de ensayo: 2026-10-19. Plataforma objetivo: Moodle 4.5.8. MooChat v1.8.2 instalado por ZIP e integración sintética con Ollama operativa. No constituye validación completa de compatibilidad. [Configuración, evidencia y límites](integracion-aero.md).

@@ -2,6 +2,32 @@
 
 Registro retrospectivo: 2026-10-26 (Argentina). Pruebas realizadas el 2026-10-25; antecedente de guía sintética ensayada el 24. Evidencia: 27 capturas aportadas y aclaraciones de la administradora. Se conserva únicamente una síntesis anonimizada, no los documentos, capturas ni identificadores personales.
 
+## Ampliación documental recibida el 26
+
+Fuente adicional: bitácora DOCX aportada por la administradora con transcripciones de pruebas del 25–26. Se registra como evidencia informada en ese documento, no como nueva inspección de VM ni revisión directa de todas las capturas referidas. No se publica el original ni sus imágenes.
+
+- El 26, con Internet habilitado, se informó lectura exitosa de un PDF de UML cargado junto a dos TXT y Only Use Uploaded Content activado. Se verificó una respuesta específica y otras sobre UML; duración informada superior a un minuto y medio. PDF falló offline en la sesión anterior y funcionó posteriormente: la causa de la diferencia y la dependencia de Internet siguen sin demostrarse.
+- La referencia del DOCX a La farolera como pregunta ajena al material se corrige con la aclaración directa de la administradora: era un TXT cargado y se leyó. No se reconstruye el contenido disponible en cada consulta anterior.
+- Medición transcrita: 1905 tokens de entrada; evaluación del prompt 45199,31 ms (42,15 tokens/s); 237 tokens generados; generación 26800,29 ms (8,81 tokens/s); total interno 71999,60 ms. HTTP 200 de chat completions en 1m38s. En esta muestra, procesar la entrada tarda más que generar. La diferencia HTTP/interno no está explicada.
+- ollama ps transcrito: qwen3-estudio:latest, 1,6 GB, 100% CPU, contexto 2048, runner llamacpp. Ese tamaño no representa toda la RAM requerida. Log transcrito: nube deshabilitada, escucha local e inferencia CPU. Suspensión del anfitrión y posterior reinicio de VM informados como condición de sesión, no diagnóstico causal.
+- Código instalado según transcripción: moochat_get_uploaded_content en lib.php:291, extracción TXT/PDF y concatenación; send_message.php agrega contenido, historial y mensaje a fullprompt y lo entrega a core_ai. No se observa recuperación semántica de fragmentos en ese recorrido. La entrada completa puede aumentar latencia, pero no se midió contribución por archivo.
+- Búsqueda de substr/truncate/mb_substr en lib.php sin coincidencias según transcripción; no demuestra ausencia de límites en otras capas. Manejo efectivo de contexto y posibles recortes pendientes de medición.
+
+Inspecciones registradas como ejecutadas en el DOCX (MOODLE_ROOT sustituye la ruta de instalación):
+
+```bash
+grep -Rnl 'generate_text' "$MOODLE_ROOT/mod/moochat"
+grep -n -C 8 'generate_text' "$MOODLE_ROOT/mod/moochat/classes/external/send_message.php"
+sed -n '135,165p' "$MOODLE_ROOT/mod/moochat/classes/external/send_message.php"
+grep -Rn 'function .*uploaded_content' "$MOODLE_ROOT/mod/moochat" --include='*.php'
+sed -n '291,310p' "$MOODLE_ROOT/mod/moochat/lib.php"
+sed -n '330,350p' "$MOODLE_ROOT/mod/moochat/lib.php"
+grep -n 'substr\|truncate\|mb_substr' "$MOODLE_ROOT/mod/moochat/lib.php"
+sed -n '160,175p' "$MOODLE_ROOT/mod/moochat/classes/external/send_message.php"
+```
+
+La búsqueda de return $content quedó expresamente NO ejecutada. Pendientes: medir texto extraído/tokens sin divulgar documentos; separar extracción, preparación, evaluación y generación; correlacionar bloqueos y suspensión. Esta ampliación no reanuda pruebas pausadas ni modifica código.
+
 ## Alcance vigente
 
 AERO se evalúa como asistente que consulta y explica materiales del curso donde está ubicado, o documentos cargados expresamente para ese curso. Debe reconocer la falta de información. Las pruebas generales de aritmética del 20 de octubre se conservan como antecedente, pero no son el criterio principal de selección ni el próximo trabajo previsto. El aislamiento de red y la restricción de contenido son controles distintos; ninguno garantiza por sí solo respuestas correctas.

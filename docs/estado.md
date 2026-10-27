@@ -4,6 +4,9 @@ Actualizado: 2026-10-26. Etapa: pausa de pruebas repetitivas de MooChat y revisi
 
 ## Continuidad del 26 de octubre — prioridad actual
 
+Revisión documental al 2026-10-27: ampliación B045 incorporada y sincronización retomada. Sin nuevas pruebas de VM ni cambios de parámetros.
+
+- Ampliación posterior por bitácora DOCX: PDF de UML funcionó con Internet habilitado el 26; fallo offline previo no demuestra dependencia técnica de Internet. Métricas transcritas: 1905 tokens de entrada, 45,2 s de evaluación; 237 generados, 26,8 s de generación; 72 s internos y HTTP 1m38s, diferencia pendiente. Inspección instalada informada confirma concatenación documental en fullprompt. Fuente documental, no nueva comprobación directa. [Detalle y comandos](ensayos-offline-2026-10-25.md).
 - Alcance: respuesta fundamentada en documentación del curso, sin convertir razonamiento general en requisito principal. Guía sintética cargada el 24, con restricción de contenido informada; respuesta correcta sobre entrega, aproximadamente un minuto según la administradora.
 - Pruebas del 25 aportadas el 26: 27 capturas. TXT de guía y La farolera leídos; Word cargado sin recuperación de información; PDF fallido según informe de la administradora. No se atribuye el fallo documental a Internet.
 - Código público MooChat: lector directo de PDF/texto, sin rama DOC/DOCX. PDF usa herramientas locales; disponibilidad, permisos y tipo de PDF en la VM sin comprobar. No equivale a auditoría del paquete instalado.
