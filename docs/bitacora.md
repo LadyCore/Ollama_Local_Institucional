@@ -392,6 +392,36 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** consolidación retrospectiva con resultados fallidos, reversiones y evidencias parciales explícitos; sin imágenes ni identificadores del entorno.
 - **Siguiente paso:** verificar publicación remota de este cambio documental y registrar avances futuros junto con estado, sin esperar una nueva solicitud.
 
+## 2026-10-26 — B042 — Alcance documental y prueba de guía del 24
+
+- **Estado:** registro retrospectivo; alcance confirmado por la administradora y respuesta observada en captura.
+- **Objetivo:** evaluar AERO como asistente del material del curso. El razonamiento general deja de ser el criterio principal.
+- **Acción y evidencia:** carga de guía TXT sintética y Only Use Uploaded Content informadas con «listo». Tras error de conexión, inicio manual de Ollama y activación temporal del booleano web; respuesta correcta sobre qué entregar y dónde, aproximadamente un minuto informado.
+- **Resultado:** consulta documental básica funcional; calidad general, latencia y aislamiento por curso no validados.
+- **Decisión:** evaluar material aportado y ausencia de información; conservar pruebas matemáticas anteriores como antecedentes.
+- **Recuperación:** no nuevo parche ni cambio de parámetros acreditado. Procedimientos previos conservados.
+- **Siguiente paso:** consolidar ensayos offline aportados el 26.
+
+## 2026-10-26 — B043 — Pruebas offline del 25 y estabilidad
+
+- **Estado:** 27 capturas revisadas; lectura TXT confirmada, Word fallido observado y PDF fallido informado.
+- **Objetivo y acciones:** registrar consulta de guía, La farolera e informe sin conectividad exterior según la administradora. [Matriz y comandos visibles](ensayos-offline-2026-10-25.md).
+- **Evidencia:** guía y La farolera eran TXT y se leyeron. Negativas reiteradas sobre informe Word; respuestas en inglés e incompletas en algunos casos. Failed to connect to AI service, watchdog/journald, soft lockup de 42 s y avisos RCU. Windows al 92–94 % de memoria en muestras.
+- **Resultado y límites:** fallos documentales y de estabilidad diferenciados. No se demuestra causa por RAM, Internet u Ollama. No hay tiempos comparables de benchmark.
+- **Decisión:** pausar nuevas repeticiones de MooChat; no modificar a ciegas modelo o prompt.
+- **Recuperación:** capturas muestran arranque/reinicio de Ollama, booleano temporal y reinicios httpd/php-fpm; no se afirma reparación permanente. No se incorporan capturas ni contenido personal al repositorio.
+- **Siguiente paso:** revisión de reemplazos y estabilidad del laboratorio.
+
+## 2026-10-26 — B044 — Formatos, candidatos y límites de recursos
+
+- **Estado:** revisión pública realizada; compatibilidad declarada, sin instalación ni medición local de candidatos.
+- **Acción:** lectura de MooChat lib.php/mod_form.php; documentación/configuración de SOLA, requisitos de AnythingLLM y OpenChat. Fuentes, diferencias y versiones en [registro documental](ensayos-offline-2026-10-25.md).
+- **Evidencia:** MooChat acepta subida genérica pero lector directo no procesa DOC/DOCX; PDF se extrae localmente. SOLA declara Moodle 4.5+, PDF/DOCX/PPTX, Ollama para chat y embeddings; RAM integral no acreditada. AnythingLLM publica 2 GB para aplicación, no para conjunto completo. OpenChat añade Open WebUI; formatos de integración pendientes.
+- **Decisión:** primero viabilidad dentro de 9250 MB del laboratorio; después destino de 15 GiB totales, 11 GiB disponibles en muestra y 16 CPU visibles. Orden de investigación provisional, no ranking de consumo medido. Sin instalación ni aprobación productiva.
+- **Recuperación de antecedente:** B041 identifica Tutor AI como local_dttutor en capturas; se corrige la falta de recuperación del nombre durante la conversación. Pendiente confirmar su correspondencia con el candidato recordado por la administradora y revisar funcionalidades.
+- **Recuperación:** cambio exclusivamente documental, sin servicios afectados.
+- **Siguiente paso:** fijar formatos y versión de candidatos; revisar cadena offline, permisos y consumo completo. Publicar y verificar este registro con actualización de estado en el mismo commit.
+
 ## Formato de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

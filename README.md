@@ -2,9 +2,11 @@
 
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.
 
-Estado al 20 de octubre de 2026: integración de MooChat v1.8.2 con Ollama local operativa en laboratorio, pero calidad de AERO no validada: errores conceptuales repetidos incluso con conversación nueva y perfil de salida de 1536 tokens verificado. Se diagnosticó timeout Apache/PHP y se aplicó ProxyTimeout 240 al sitio de laboratorio. Filtro IP persistente y permiso SELinux web temporal conservados. No hay aprobación para producción ni demostración integral de ausencia de salida de datos desde Moodle. Las respuestas correctas aisladas no constituyen validación pedagógica.
+Estado al 26 de octubre de 2026: AERO se evalúa para responder con materiales del curso. En pruebas offline, MooChat leyó los TXT de la guía y La farolera; Word no aportó respuestas y se informó fallo con PDF. Hubo además bloqueos de la VM y errores de conexión, sin causa determinada. Se pausan pruebas repetitivas de MooChat y se revisan reemplazos: primero viabilidad completa dentro de los aproximadamente 9 GB del laboratorio; después, en el destino de 15 GiB. Ningún reemplazo está instalado ni validado. Se conservan los parámetros históricos y controles de red documentados; no hay aprobación para producción ni demostración integral de ausencia de salida de datos desde Moodle.
 
 ## Documentación
+
+- [Pruebas offline y candidatos, 25–26 de octubre](docs/ensayos-offline-2026-10-25.md): resultados de documentos, incidentes de VM, recursos y selección pendiente.
 
 - [Ensayos AERO del 20 de octubre](docs/ensayos-aero-2026-10-20.md): matriz de resultados, cambios efectivos, discrepancias, reversiones y siguiente comparación pendiente.
 
@@ -26,7 +28,7 @@ La evaluación comprende instalación de Ollama, validación de procesamiento lo
 
 ## Datos de ensayo y privacidad
 
-Las pruebas utilizan datos sintéticos. La evidencia publicada se limita a resultados técnicos anonimizados y procedimientos con parámetros sustituibles, sin credenciales, identificadores institucionales ni datos de usuarios.
+Las pruebas iniciales utilizan datos sintéticos; posteriormente se aportaron ensayos con otros documentos, cuyo contenido no se incorpora al repositorio. La evidencia publicada se limita a resultados técnicos anonimizados y procedimientos con parámetros sustituibles, sin credenciales, identificadores institucionales ni datos de usuarios.
 
 ## Resultado esperado
 

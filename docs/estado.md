@@ -1,8 +1,19 @@
 # Entorno y estado
 
-Actualizado: 2026-10-20. Etapa: conexión AERO operativa, calidad no validada. Estado vigente y matriz en [ensayos del 20 de octubre](ensayos-aero-2026-10-20.md); [integración del 19](integracion-aero.md) es un antecedente histórico. Latencia, estabilidad de VM y persistencia pendientes; no aprobado para producción. Las comprobaciones de recursos y contadores de reinicios siguientes corresponden a sus muestras históricas, no a mediciones continuas.
+Actualizado: 2026-10-26. Etapa: pausa de pruebas repetitivas de MooChat y revisión de reemplazos para consulta documental local. Rigen los [resultados offline del 25 y revisión del 26](ensayos-offline-2026-10-25.md). Los [ensayos del 20](ensayos-aero-2026-10-20.md) y la [integración del 19](integracion-aero.md) se conservan como antecedentes. Latencia, estabilidad de VM y persistencia pendientes; no aprobado para producción.
 
-## Continuidad inmediata — prevalece sobre antecedentes
+## Continuidad del 26 de octubre — prioridad actual
+
+- Alcance: respuesta fundamentada en documentación del curso, sin convertir razonamiento general en requisito principal. Guía sintética cargada el 24, con restricción de contenido informada; respuesta correcta sobre entrega, aproximadamente un minuto según la administradora.
+- Pruebas del 25 aportadas el 26: 27 capturas. TXT de guía y La farolera leídos; Word cargado sin recuperación de información; PDF fallido según informe de la administradora. No se atribuye el fallo documental a Internet.
+- Código público MooChat: lector directo de PDF/texto, sin rama DOC/DOCX. PDF usa herramientas locales; disponibilidad, permisos y tipo de PDF en la VM sin comprobar. No equivale a auditoría del paquete instalado.
+- Estabilidad: watchdog, reinicios de journald, soft lockup de 42 s y avisos RCU. Windows al 92–94 % de memoria en muestras. Causa no determinada; no hay benchmark limpio ni evidencia concluyente de agotamiento de RAM.
+- Criterio obligatorio: primero conjunto completo dentro de 9250 MB asignados al laboratorio; después destino de 15 GiB totales/11 GiB disponibles en la muestra y 16 CPU visibles Xeon Silver 4314. No confundir ambos inventarios ni considerar la disponibilidad como reserva.
+- Candidatos sin instalar: SOLA primero para revisión funcional, AnythingLLM segundo, OpenChat/Open WebUI de menor prioridad provisional. Ninguno tiene viabilidad de RAM medida aquí. Tutor AI (local_dttutor), identificado en B041, vuelve a la revisión como antecedente recuperado.
+- Se suspenden repeticiones de MooChat y cambios de tokens/prompts a ciegas. Pendiente revisar formatos, dependencias offline, límites por curso/usuario y consumo de extracción, embeddings y generación; aclarar estabilidad antes de nuevos ensayos.
+- Los parámetros del apartado siguiente son los últimos verificados históricamente. No hubo nueva comprobación completa de configuración ni modificación del entorno durante la actualización documental.
+
+## Configuración y antecedentes al 20 de octubre
 
 - Proveedor Moodle: qwen3-estudio. Perfil verificado al cierre: num_predict 1536, num_thread 2, num_ctx 2048, temperature 0.6, top_k 20, top_p 0.95, repeat_penalty 1. Inspección del modelo: qwen3, 2.0B, Q4_K_M; contexto declarado 40960, thinking predeterminado true. La referencia histórica 1.7b no reemplaza esta evidencia.
 - Discrepancia resuelta operativamente: Modelfile con 1536 y creación success coexistieron con parámetros consultados en 512; se recreó y se comprobó 1536. Causa pendiente. No asumir valor efectivo desde el mensaje success.
@@ -12,7 +23,7 @@ Actualizado: 2026-10-20. Etapa: conexión AERO operativa, calidad no validada. E
 - Calidad: prueba de lápices correcta en AERO (~48 s); prueba de clases incorrecta repetidamente (~25–60 s), incluso sin historial y después de verificar 1536. API directa: éxitos parciales y errores según variantes. Última solicitud con instrucciones AERO + User/Assistant falló en 78,812803 s, 455 tokens, stop y razonamiento presente; no agotó límite.
 - No se demostró que omitir reasoning_effort desactive thinking: consulta directa sin ese campo generó reasoning. Comparación con Moodle todavía no equivalente; pendiente system global y comprobación del texto almacenado/HTML.
 - Pausas espontáneas de VM y avisos clocksource interfieren con medición de tiempos; causa no determinada. No declarar un benchmark ni deterioro progresivo del modelo.
-- Próximo paso: banco reproducible de variantes, con repeticiones y resultados resumidos, sin continuar ajustes manuales a ciegas. No implementado todavía. Exploración de PDF, preguntas guía, diapositivas y Tutor AI pendiente; descarga no equivale a instalación.
+- Próximo paso propuesto el 20: banco reproducible de variantes; no implementado. La prioridad fue reemplazada por la evaluación documental indicada arriba. Descarga de Tutor AI no equivale a instalación.
 - Trazabilidad: consolidación retrospectiva de avances posteriores a B035 en B036–B041 y documento de ensayos; no se registró sincronización durante cada prueba. Verificación del commit remoto requerida al publicar este cambio.
 
 ## Inventario de laboratorio confirmado
