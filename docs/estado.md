@@ -1,5 +1,19 @@
 # Entorno y estado
 
+## Estado vigente al 2026-11-01 — prevalece sobre registros anteriores
+
+Fuente: informe DOCX aportado, con pruebas ejecutadas informadas; no nueva inspección directa. [Consolidación completa](estado-aero-2026-11-01.md).
+
+Sincronización retomada el 1 de noviembre: autorización de dispositivo completada y acceso al repositorio privado comprobado desde la sesión de Windows fuera del entorno restringido. El entorno restringido continuaba devolviendo error de credencial; no se requiere repetir el inicio de sesión por ese resultado. Base remota comprobada antes de publicar: e29c9f014c1dbb97693a511e71ff209945e4ee3a. La revisión nueva se verifica al finalizar la publicación.
+
+- CPUQuota=400 %; MemoryMax=4G después de prueba temporal a 5G sin mejora apreciable. Contexto 2048 y Python 3.9.25 informados; num_thread no comprobado nuevamente.
+- Última medición: 2021 tokens de entrada/73,61 s; 295 de salida/36,41 s; total 110,02 s; truncated=1. Tiempos de servidor, no UI integral.
+- Contenido think expuesto en MooChat según informe. --think=false funcionó como argumento CLI (3,448 s, consulta breve); como texto de prompts no funcionó y fue retirado.
+- HTTP directo con reasoning_effort=none válido, 27 tokens de entrada y 33 de salida, sin razonamiento visible; rendimiento con documentos todavía pendiente.
+- Propuesta acordada según informe: evaluar intermediario HTTP local para agregar ese campo, primero con curl. NO implementado; endpoint Moodle sin cambio acreditado; núcleo Moodle sin modificar.
+- Búsqueda de return $content completada en captura del 27: líneas 344 y 545. Ya no es pendiente.
+- Continúan límites de laboratorio, revisión de alternativas y cuestiones de estabilidad/documentos; siguiente trabajo informado es validar intermediario, UI y truncamiento, no instalar sustitutos automáticamente.
+
 Actualizado: 2026-10-26. Etapa: pausa de pruebas repetitivas de MooChat y revisión de reemplazos para consulta documental local. Rigen los [resultados offline del 25 y revisión del 26](ensayos-offline-2026-10-25.md). Los [ensayos del 20](ensayos-aero-2026-10-20.md) y la [integración del 19](integracion-aero.md) se conservan como antecedentes. Latencia, estabilidad de VM y persistencia pendientes; no aprobado para producción.
 
 ## Continuidad del 26 de octubre — prioridad actual

@@ -440,7 +440,19 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación:** publicación sin forzar la rama, preservando cambios remotos; en caso de discrepancia, detener y revisar antes de publicar.
 - **Siguiente paso:** revisar candidatos y consumo integral bajo el límite del laboratorio; no repetir ajustes de MooChat a ciegas.
 
-## Formato de nuevas entradas
+## 2026-11-01 — B047 — Consolidación de informe técnico y pendiente resuelto
+
+- **Estado:** informe DOCX leído y contrastado; ensayos ejecutados informados, sin repetir pruebas ni verificar directamente la VM. Búsqueda de return $content verificada en captura aportada del 27.
+- **Objetivo y acción:** incorporar avances de recursos, latencia, truncamiento y control de razonamiento. [Detalle, métricas y evidencia](estado-aero-2026-11-01.md).
+- **Evidencia:** CPUQuota=400 %, MemoryMax=4G tras reversión de 5G, contexto 2048, Python 3.9.25. Última muestra 110,02 s con 2021 tokens de entrada, 295 de salida y truncated=1. Think visible en UI informado. CLI --think=false: 3,448 s en consulta breve; texto en prompts ineficaz y retirado. HTTP reasoning_effort=none: respuesta válida 27/33 tokens, sin razonamiento visible. grep devolvió líneas 344 y 545.
+- **Resultado y límites:** datos nuevos sustituyen configuración histórica donde corresponde; no se equiparan tiempos CLI/HTTP con UI, ni se generaliza mejora a documentos completos. No se afirma cambio de num_thread a partir de CPUQuota.
+- **Decisión:** intermediario HTTP local registrado como alternativa acordada pendiente de implementar y validar; no cambio del endpoint ni modificación de núcleo acreditados. Se mantienen restricciones de recursos y revisión de candidatos como pendientes.
+- **Recuperación:** 5G revertido a 4G y textos experimentales retirados según informe. Esta sesión solo actualiza documentación, sin publicar DOCX ni capturas.
+- **Sincronización:** fallida el 2026-11-01 antes de crear commit remoto: gh informa credencial inválida y API de usuario 401; repositorio 404 tanto por CLI como por conector. Revisión local de privacidad y enlaces satisfactoria. Última revisión publicada verificada: e29c9f014c1dbb97693a511e71ff209945e4ee3a. No se declara publicada esta entrada.
+- **Recuperación de sincronización:** autorización de dispositivo completada. Acceso a cuenta y repositorio privado comprobado fuera del entorno restringido; dentro de este persistía error de credencial. Rama base remota coincide con e29c9f014c1dbb97693a511e71ff209945e4ee3a. Se retoma publicación sin forzar cambios remotos.
+- **Siguiente paso:** verificar publicación; posteriormente validar intermediario, latencia integral, exposición de razonamiento y truncamiento con condiciones comparables.
+
+## Plantilla de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título
 
