@@ -452,6 +452,18 @@ Registro cronológico del laboratorio. Zona de referencia: America/Buenos_Aires.
 - **Recuperación de sincronización:** autorización de dispositivo completada. Acceso a cuenta y repositorio privado comprobado fuera del entorno restringido; dentro de este persistía error de credencial. Rama base remota coincide con e29c9f014c1dbb97693a511e71ff209945e4ee3a. Se retoma publicación sin forzar cambios remotos.
 - **Siguiente paso:** verificar publicación; posteriormente validar intermediario, latencia integral, exposición de razonamiento y truncamiento con condiciones comparables.
 
+## 2026-11-01 — B048 — Parámetros y latencia de la consulta UML
+
+Capturas verificadas: dos hilos, contexto 2048, generación máxima 1536, cuota CPU 400 % y memoria máxima 4 GiB. Se distinguieron 123,47 s internos y 2 min 27 s HTTP. La inspección previa acredita la inclusión del historial; su política de selección sigue pendiente.
+
+## 2026-11-03 a 2026-11-04 — B049 — Actividad después del foro de la unidad
+
+Configuración y respuestas observadas en capturas, tiempos informados. Consultas de unidad y foro en 44 y 43 s, respectivamente. La administradora contrastó el título atribuido a un documento y el resumen del segundo video. El tema existía en el libro, pero la referencia era incorrecta; el video trataba principalmente de antenas.
+
+## 2026-11-05 — B050 — Cuatro objetivos y prueba con PDF
+
+Ejecutado informado y cotejo manual. Antes del PDF, cuatro consultas demoraron 33, 43, 23 y aproximadamente 36 s. Con PDF exclusivo, la consulta sobre protección demoró unos 60 s y una repregunta produjo dos referencias reconocibles en el índice. Próxima demostración propuesta, pendiente. [Detalle y condiciones de reproducción](ensayos-2026-11-03-a-05.md).
+
 ## Plantilla de nuevas entradas
 
 ### AAAA-MM-DD — BNNN — Título

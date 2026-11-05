@@ -1,6 +1,10 @@
 # Entorno y estado
 
-## Estado vigente al 2026-11-01 — prevalece sobre registros anteriores
+## Estado al 5 de noviembre de 2026
+
+En el laboratorio, el ensayo con PDF exclusivo y creatividad configurada en 0,5 permitió cotejar dos títulos y páginas con el índice. La consulta de protección pasó de 43 s antes de cargar el PDF a unos 60 s con el archivo. Los ensayos por sección mostraron errores de atribución y de descripción de una clase. Se propone una demostración en laboratorio, pendiente de ejecución. [Configuración, historial y mediciones](ensayos-2026-11-03-a-05.md).
+
+## Antecedente del 1 de noviembre, previo a la lectura de parámetros y registros de esa noche
 
 Fuente: informe DOCX aportado, con pruebas ejecutadas informadas; no nueva inspección directa. [Consolidación completa](estado-aero-2026-11-01.md).
 

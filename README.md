@@ -1,12 +1,14 @@
 # Ollama local institucional
 
+**Actualización del 5 de noviembre de 2026.** La actividad por unidad dio respuestas de 43–44 s con errores al identificar fuentes. En la prueba posterior con PDF se pudieron cotejar dos referencias con el índice. [Configuración, resultados y límites de los ensayos](docs/ensayos-2026-11-03-a-05.md).
+
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.
 
 Estado al 26 de octubre de 2026: AERO se evalúa para responder con materiales del curso. En pruebas offline, MooChat leyó los TXT de la guía y La farolera; Word no aportó respuestas y se informó fallo con PDF. Hubo además bloqueos de la VM y errores de conexión, sin causa determinada. Se pausan pruebas repetitivas de MooChat y se revisan reemplazos: primero viabilidad completa dentro de los aproximadamente 9 GB del laboratorio; después, en el destino de 15 GiB. Ningún reemplazo está instalado ni validado. Se conservan los parámetros históricos y controles de red documentados; no hay aprobación para producción ni demostración integral de ausencia de salida de datos desde Moodle.
 
 ## Documentación
 
-- [Estado consolidado del 1 de noviembre](docs/estado-aero-2026-11-01.md): actualización vigente de recursos, mediciones, truncamiento y razonamiento visible. Intermediario HTTP local propuesto, aún no implementado. Los estados fechados anteriores se conservan como antecedentes.
+- [Estado consolidado del 1 de noviembre](docs/estado-aero-2026-11-01.md): antecedentes de recursos, mediciones, truncamiento y razonamiento visible.
 
 Ampliación registrada al 27 de octubre: la bitácora aportada informa una prueba exitosa con PDF el 26, con Internet habilitado, posterior al fallo offline. No se demuestra que Internet sea requisito. La medición transcrita registra 45,2 s de evaluación de entrada y 26,8 s de generación; 72 s internos frente a 1m38s HTTP. Véanse evidencia y límites en el registro offline.
 
