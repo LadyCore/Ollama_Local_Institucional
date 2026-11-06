@@ -464,7 +464,18 @@ Configuración y respuestas observadas en capturas, tiempos informados. Consulta
 
 Ejecutado informado y cotejo manual. Antes del PDF, cuatro consultas demoraron 33, 43, 23 y aproximadamente 36 s. Con PDF exclusivo, la consulta sobre protección demoró unos 60 s y una repregunta produjo dos referencias reconocibles en el índice. Próxima demostración propuesta, pendiente. [Detalle y condiciones de reproducción](ensayos-2026-11-03-a-05.md).
 
-## Plantilla de nuevas entradas
+## 2026-11-06 — B051 — Incorporación de ensayos del curso de tutores del día 5
+
+- **Objetivo:** preservar configuración, consultas, contrastes y tiempos del nuevo curso.
+- **Estado:** ejecutado informado por la administradora. Informe leído e incorporado a documentación local el día 6.
+- **Evidencia:** informe de ocho pruebas, comparaciones con capítulos 5, 6, 7 y 12, error de conexión y registros del kernel del día 5.
+- **Resultado:** errores de atribución entre capítulos, respuestas extensas y tiempos de aproximadamente 1,5 a más de 3 minutos. El intervalo de más de diez minutos de la consulta C queda excluido como medición de generación.
+- **Incidente y recuperación:** soft lockup de CPU virtual de 468 s, avisos de clocksource y posterior retorno del prompt. Ollama informó active. Recuperación de inferencias pendiente de comprobar.
+- **Cambios informados:** corrección de la especialidad en el prompt, nueva instancia tras un foro, cambio posterior a creatividad 0,3 y contenido oculto desactivado. Efectos causales sin aislar.
+- **Siguiente paso propuesto:** material explícito, preguntas constantes, contraste por autoras del curso y diagnóstico separado de VM e inferencia.
+- [Registro detallado y comandos ejecutados en la sesión informada](ensayos-tutores-2026-11-05.md).
+
+## Plantilla para la próxima entrada
 
 ### AAAA-MM-DD — BNNN — Título
 

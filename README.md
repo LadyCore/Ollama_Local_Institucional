@@ -1,5 +1,7 @@
 # Ollama local institucional
 
+**Actualización del 6 de noviembre de 2026.** Se incorporaron pruebas del día 5 en un curso de tutores, con errores de correspondencia entre capítulos, consultas de aproximadamente 1,5 a más de 3 minutos y un incidente de CPU virtual. [Resultados, configuración y diagnóstico pendiente](docs/ensayos-tutores-2026-11-05.md).
+
 **Actualización del 5 de noviembre de 2026.** La actividad por unidad dio respuestas de 43–44 s con errores al identificar fuentes. En la prueba posterior con PDF se pudieron cotejar dos referencias con el índice. [Configuración, resultados y límites de los ensayos](docs/ensayos-2026-11-03-a-05.md).
 
 Laboratorio para conocer el funcionamiento de Ollama local, determinar configuraciones y restricciones, y evaluar plugins de Moodle compatibles. La evidencia obtenida servirá para elaborar una propuesta técnica ante la instancia jerárquica superior; la selección de usos corresponde a las áreas destinatarias dentro de las capacidades que se validen.

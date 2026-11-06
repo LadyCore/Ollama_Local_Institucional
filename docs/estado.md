@@ -1,6 +1,10 @@
 # Entorno y estado
 
-## Estado al 5 de noviembre de 2026
+## Estado documental al 6 de noviembre de 2026
+
+Se incorporó el informe del curso de tutores, con pruebas del 5 de noviembre. Las consultas medidas tardaron aproximadamente 1,5 a más de 3 minutos. Hubo atribuciones erróneas entre capítulos y un fallo de conexión. El registro incluye un soft lockup de CPU virtual de 468 s. Ollama informó active después de recuperar el prompt, con funcionamiento de la API pendiente de verificar. Se propone evaluar material explícito y diagnosticar la VM. [Registro completo de pruebas y pendientes](ensayos-tutores-2026-11-05.md).
+
+## Antecedente de pruebas por sección y con PDF al 5 de noviembre
 
 En el laboratorio, el ensayo con PDF exclusivo y creatividad configurada en 0,5 permitió cotejar dos títulos y páginas con el índice. La consulta de protección pasó de 43 s antes de cargar el PDF a unos 60 s con el archivo. Los ensayos por sección mostraron errores de atribución y de descripción de una clase. Se propone una demostración en laboratorio, pendiente de ejecución. [Configuración, historial y mediciones](ensayos-2026-11-03-a-05.md).
 
