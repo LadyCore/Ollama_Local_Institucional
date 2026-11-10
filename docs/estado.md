@@ -1,5 +1,9 @@
 # Entorno y estado
 
+## Estado documental al 9 de noviembre de 2026
+
+Se recuperaron métricas de entrada y generación y se contrastaron respuestas con el cronograma. El modelo listado e inspeccionado falló al ejecutarse por CLI, incluso sin --think=false, con /api/show 404 e intento remoto bloqueado. Servicio active y diagnóstico abierto. La versión informada hoy (0.4.6) difiere del registro previo (0.40.6), pendiente de cotejo. La pregunta histórica de 23 s está identificada en el registro del día 5; sus métricas internas siguen pendientes. [Evidencia y configuración](ensayos-2026-11-09.md).
+
 ## Estado documental al 6 de noviembre de 2026
 
 Se incorporó el informe del curso de tutores, con pruebas del 5 de noviembre. Las consultas medidas tardaron aproximadamente 1,5 a más de 3 minutos. Hubo atribuciones erróneas entre capítulos y un fallo de conexión. El registro incluye un soft lockup de CPU virtual de 468 s. Ollama informó active después de recuperar el prompt, con funcionamiento de la API pendiente de verificar. Se propone evaluar material explícito y diagnosticar la VM. [Registro completo de pruebas y pendientes](ensayos-tutores-2026-11-05.md).

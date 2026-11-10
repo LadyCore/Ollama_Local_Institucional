@@ -475,6 +475,16 @@ Ejecutado informado y cotejo manual. Antes del PDF, cuatro consultas demoraron 3
 - **Siguiente paso propuesto:** material explícito, preguntas constantes, contraste por autoras del curso y diagnóstico separado de VM e inferencia.
 - [Registro detallado y comandos ejecutados en la sesión informada](ensayos-tutores-2026-11-05.md).
 
+## 2026-11-09 — B052 — Métricas, fidelidad y fallo de ejecución CLI
+
+- **Objetivo:** consolidar capturas de sesión e informe técnico del día.
+- **Estado:** capturas observadas y comprobaciones CLI ejecutadas informadas.
+- **Acciones y evidencia:** inspección de modelo, versión, Modelfile, entorno y estado del servicio; cuatro intentos run fallidos. Comandos y resultados en el [registro detallado](ensayos-2026-11-09.md).
+- **Resultado:** métricas de seis solicitudes, respuesta correcta de cinco clases, discrepancias de fuentes y exámenes, servicio activo con fallo de resolución del modelo en los intentos CLI examinados.
+- **Correcciones de continuidad:** conservar la pregunta histórica «qué es la destrucción?» (23 s, día 5). Registrar versión 0.4.6 informada hoy frente a 0.40.6 histórica como discrepancia pendiente.
+- **Recuperación:** sin cambios permanentes informados ni mejora CLI confirmada.
+- **Siguiente paso:** manifiesto local, resolución del modelo, cotejo de versión y pruebas comparables de thinking mediante MooChat.
+
 ## Plantilla para la próxima entrada
 
 ### AAAA-MM-DD — BNNN — Título
