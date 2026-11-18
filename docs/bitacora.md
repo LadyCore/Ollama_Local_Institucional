@@ -485,7 +485,19 @@ Ejecutado informado y cotejo manual. Antes del PDF, cuatro consultas demoraron 3
 - **Recuperación:** sin cambios permanentes informados ni mejora CLI confirmada.
 - **Siguiente paso:** manifiesto local, resolución del modelo, cotejo de versión y pruebas comparables de thinking mediante MooChat.
 
-## Plantilla para la próxima entrada
+## 2026-11-17 — B053 — Investigación de experiencias públicas de IA en Moodle
+
+- **Objetivo:** reunir evidencia sobre plugins existentes, Ollama local, contexto documental, citas, rendimiento y alternativas; desarrollo propio solo como antecedente.
+- **Estado:** verificada la consulta documental; no se reprodujeron las instalaciones externas.
+- **Acción:** búsqueda pública en inglés y español, examen del índice del foro AI, lectura textual completa de 21 hilos y consulta de documentación, versiones y repositorios enlazados. Recuperación de revisiones y ensayos previos del proyecto.
+- **Evidencia:** [informe completo con enlaces, fechas, configuraciones y grado de verificación](investigacion-foros-ia-moodle-2026-11-17.md). El informe distingue limitaciones del buscador, errores de acceso automatizado y alcance real del corpus.
+- **Resultado:** soluciones de conexión confirmadas en Moodle 4.5 y 5; testimonios de modelos locales pequeños; insuficiencia de pruebas comparables para citas, extracción integral, actualización documental y tiempos de AERO.
+- **Decisión:** no seleccionar arquitectura ni instalar sustitutos. Conservar revisión adversa de Terus RAG v1.0.9 y candidatos históricos sin revalidarlos por publicidad. Separar los dos ensayos de aproximadamente 23 segundos.
+- **Resguardo:** documentos previos comparados con la revisión remota fd09070fb98fb5fa97b91bcb452778d51c15d064 antes de editar; coincidencia verificada y repositorio privado confirmado. Publicación de esta actualización sujeta a comprobación de revisión final.
+- **Recuperación:** no aplica a servicios; no hubo cambios de configuración ni código del laboratorio.
+- **Siguiente paso:** decisión posterior basada en evidencia y vacíos de validación; sin ensayo nuevo acordado en este avance.
+
+## Plantilla de entrada siguiente
 
 ### AAAA-MM-DD — BNNN — Título
 

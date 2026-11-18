@@ -1,5 +1,7 @@
 # Ollama local institucional
 
+**Actualización del 17 de noviembre de 2026.** Relevamiento de 21 discusiones completas de los foros oficiales, documentación y plugins existentes. Se distinguen soluciones de conexión confirmadas, experiencias locales, capacidades declaradas y cuestiones documentales sin verificar. No se modificó el laboratorio ni se seleccionó un reemplazo. [Informe comparativo con fuentes y límites](docs/investigacion-foros-ia-moodle-2026-11-17.md).
+
 **Actualización del 9 de noviembre de 2026.** Se incorporaron tiempos internos y HTTP, tokens, errores de atribución y fallo de ejecución CLI del modelo local. La desactivación de thinking continúa pendiente. [Pruebas y diagnóstico del día](docs/ensayos-2026-11-09.md).
 
 **Actualización del 6 de noviembre de 2026.** Se incorporaron pruebas del día 5 en un curso de tutores, con errores de correspondencia entre capítulos, consultas de aproximadamente 1,5 a más de 3 minutos y un incidente de CPU virtual. [Resultados, configuración y diagnóstico pendiente](docs/ensayos-tutores-2026-11-05.md).
